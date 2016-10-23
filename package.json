@@ -1,7 +1,7 @@
 {
   "name": "ionic-orm",
   "private": false,
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.10",
   "description": "Data-mapper ORM for Ionic WebSQL and SQLite",
   "license": "MIT",
   "author": "Brady Liles <bradyliles@outlook.com>",
@@ -31,7 +31,7 @@
     "reflect-metadata": "^0.1.8"
   },
   "homepage": "https://github.com/BradyLiles/ionic-orm#readme",
-  "main": "dist/index.js",
+  "main": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
