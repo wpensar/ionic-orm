@@ -2,433 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f2ba96f-545e-4811-84a5-9945d84e74fa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/index.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/common/ObjectLiteral.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/common/ObjectType.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/Connection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/ConnectionManager.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/ConnectionOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/AlreadyHasActiveConnectionError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/CannotCloseNotConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/CannotConnectAlreadyConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/CannotDetermineConnectionOptionsError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/CannotGetEntityManagerNotConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/CannotImportAlreadyConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/CannotSyncNotConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/CannotUseNamingStrategyNotConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/ConnectionNotFoundError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/MissingDriverError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/NamingStrategyNotFoundError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/NoConnectionForRepositoryError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/RepositoryNotFoundError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/connection/error/RepositoryNotTreeError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/container.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/DiscriminatorValue.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/Embedded.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/Index.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/NamingStrategy.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/columns/Column.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/columns/CreateDateColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/columns/DiscriminatorColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/columns/PrimaryColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/columns/PrimaryGeneratedColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/columns/UpdateDateColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/columns/VersionColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/error/ColumnTypeUndefinedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/error/GeneratedOnlyForPrimaryError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/error/PrimaryColumnCannotBeNullableError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/listeners/AfterInsert.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/listeners/AfterLoad.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/listeners/AfterRemove.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/listeners/AfterUpdate.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/listeners/BeforeInsert.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/listeners/BeforeRemove.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/listeners/BeforeUpdate.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/listeners/EventSubscriber.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/options/ColumnOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/options/IndexOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/options/JoinColumnOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/options/JoinTableOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/options/RelationOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/options/TableOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/relations/JoinColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/relations/JoinTable.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/relations/ManyToMany.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/relations/ManyToOne.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/relations/OneToMany.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/relations/OneToOne.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/relations/RelationCount.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/relations/RelationId.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tables/AbstractTable.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tables/ClassTableChild.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tables/ClosureTable.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tables/EmbeddableTable.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tables/SingleTableChild.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tables/Table.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tables/TableInheritance.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tree/TreeChildren.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tree/TreeLevelColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/decorator/tree/TreeParent.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/DatabaseConnection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/Driver.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/DriverOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/DriverUtils.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/error/ConnectionIsNotSetError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/error/DataTypeNotSupportedByDriverError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/error/DriverOptionNotSetError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/error/DriverPackageLoadError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/error/DriverPackageNotInstalledError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/error/DriverPoolingNotSupportedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/error/TransactionAlreadyStartedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/error/TransactionNotStartedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/websql/WebSqlDriver.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/driver/websql/WebSqlQueryRunner.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/entity-manager/BaseEntityManager.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/entity-manager/EntityManager.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/entity-manager/error/NoNeedToReleaseEntityManagerError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/entity-schema/EntitySchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/find-options/FindOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/find-options/FindOptionsUtils.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/find-options/OrderByCondition.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/lazy-loading/LazyRelationsWrapper.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/logger/Logger.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/logger/LoggerOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/ColumnMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/DiscriminatorValueMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/EmbeddedMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/EntityListenerMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/EntityMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/EntitySubscriberMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/IndexMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/InheritanceMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/JoinColumnMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/JoinTableMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/MetadataArgsStorage.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/NamingStrategyMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/RelationCountMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/RelationIdMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/RelationMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/TableMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/collection/EntityMetadataCollection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/collection/PropertyMetadataArgsCollection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/collection/TargetMetadataArgsCollection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-args/error/EntityMetadataNotFound.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/ClosureJunctionEntityMetadataBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/EntityMetadataBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/EntityMetadataFactory.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/EntityMetadataValidator.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/JunctionEntityMetadataBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/error/MetadataAlreadyExistsError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/error/MetadataWithSuchNameAlreadyExistsError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/error/MissingJoinColumnError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/error/MissingJoinTableError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/error/MissingPrimaryColumnError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/error/UsingJoinColumnIsNotAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/error/UsingJoinColumnOnlyOnOneSideAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/error/UsingJoinTableIsNotAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata-builder/error/UsingJoinTableOnlyOnOneSideAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/ColumnMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/EmbeddedMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/EntityListenerMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/EntityMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/EntitySubscriberMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/ForeignKeyMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/IndexMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/JoinColumnMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/JoinTableMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/PropertyMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/RelationCountMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/RelationMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/TableMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/TargetMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/error/EntityMetadataAlreadySetError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/error/EntityMetadataNotSetError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/types/ColumnTypes.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/types/EventListenerTypes.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/types/RelationTypes.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/metadata/types/TableTypes.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/naming-strategy/DefaultNamingStrategy.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/naming-strategy/NamingStrategyInterface.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/EntityPersistOperationsBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/EntityPersister.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/PersistOperationExecutor.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/error/CascadesNotAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/operation/InsertOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/operation/JunctionInsertOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/operation/JunctionRemoveOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/operation/PersistOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/operation/RemoveOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/operation/UpdateByInverseSideOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/operation/UpdateByRelationOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/persistment/operation/UpdateOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-builder/QueryBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-builder/alias/Alias.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-builder/alias/AliasMap.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-builder/transformer/PlainObjectToDatabaseEntityTransformer.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-builder/transformer/PlainObjectToNewEntityTransformer.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-builder/transformer/RawSqlResultsToEntityTransformer.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-runner/QueryRunner.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-runner/QueryRunnerProvider.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-runner/error/QueryRunnerAlreadyReleasedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/query-runner/error/QueryRunnerProviderAlreadyReleasedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/repository/Repository.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/repository/RepositoryAggregator.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/repository/RepositoryFactory.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/repository/SpecificRepository.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/repository/TreeRepository.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/schema-builder/SchemaBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/schema-builder/schema/ColumnSchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/schema-builder/schema/ForeignKeySchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/schema-builder/schema/IndexSchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/schema-builder/schema/PrimaryKeySchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/schema-builder/schema/TableSchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/subscriber/Broadcaster.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/subscriber/EntitySubscriberInterface.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/subscriber/event/InsertEvent.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/subscriber/event/RemoveEvent.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/subscriber/event/UpdateEvent.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/util/DirectoryExportedClassesLoader.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/util/OrmUtils.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/src/util/sha1.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/ObjectLiteral.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/ObjectType.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/Connection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/ConnectionManager.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/ConnectionOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/AlreadyHasActiveConnectionError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/CannotCloseNotConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/CannotConnectAlreadyConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/CannotDetermineConnectionOptionsError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/CannotGetEntityManagerNotConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/CannotImportAlreadyConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/CannotSyncNotConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/CannotUseNamingStrategyNotConnectedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/ConnectionNotFoundError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/MissingDriverError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/NamingStrategyNotFoundError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/NoConnectionForRepositoryError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/RepositoryNotFoundError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/error/RepositoryNotTreeError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/DiscriminatorValue.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/Embedded.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/Index.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/NamingStrategy.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/columns/Column.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/columns/CreateDateColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/columns/DiscriminatorColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/columns/PrimaryColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/columns/PrimaryGeneratedColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/columns/UpdateDateColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/columns/VersionColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/error/ColumnTypeUndefinedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/error/GeneratedOnlyForPrimaryError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/error/PrimaryColumnCannotBeNullableError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/listeners/AfterInsert.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/listeners/AfterLoad.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/listeners/AfterRemove.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/listeners/AfterUpdate.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/listeners/BeforeInsert.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/listeners/BeforeRemove.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/listeners/BeforeUpdate.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/listeners/EventSubscriber.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/options/ColumnOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/options/IndexOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/options/JoinColumnOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/options/JoinTableOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/options/RelationOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/options/TableOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/relations/JoinColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/relations/JoinTable.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/relations/ManyToMany.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/relations/ManyToOne.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/relations/OneToMany.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/relations/OneToOne.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/relations/RelationCount.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/relations/RelationId.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tables/AbstractTable.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tables/ClassTableChild.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tables/ClosureTable.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tables/EmbeddableTable.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tables/SingleTableChild.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tables/Table.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tables/TableInheritance.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tree/TreeChildren.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tree/TreeLevelColumn.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decorator/tree/TreeParent.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/DatabaseConnection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/Driver.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/DriverOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/DriverUtils.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/error/ConnectionIsNotSetError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/error/DataTypeNotSupportedByDriverError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/error/DriverOptionNotSetError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/error/DriverPackageLoadError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/error/DriverPackageNotInstalledError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/error/DriverPoolingNotSupportedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/error/TransactionAlreadyStartedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/error/TransactionNotStartedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/websql/WebSqlDriver.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/driver/websql/WebSqlQueryRunner.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entity-manager/BaseEntityManager.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entity-manager/EntityManager.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entity-manager/error/NoNeedToReleaseEntityManagerError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entity-schema/EntitySchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/find-options/FindOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/find-options/FindOptionsUtils.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/find-options/OrderByCondition.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lazy-loading/LazyRelationsWrapper.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/logger/Logger.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/logger/LoggerOptions.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/ColumnMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/DiscriminatorValueMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/EmbeddedMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/EntityListenerMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/EntityMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/EntitySubscriberMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/IndexMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/InheritanceMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/JoinColumnMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/JoinTableMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/MetadataArgsStorage.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/NamingStrategyMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/RelationCountMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/RelationIdMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/RelationMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/TableMetadataArgs.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/collection/EntityMetadataCollection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/collection/PropertyMetadataArgsCollection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/collection/TargetMetadataArgsCollection.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-args/error/EntityMetadataNotFound.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/ClosureJunctionEntityMetadataBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/EntityMetadataBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/EntityMetadataFactory.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/EntityMetadataValidator.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/JunctionEntityMetadataBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/error/MetadataAlreadyExistsError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/error/MetadataWithSuchNameAlreadyExistsError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/error/MissingJoinColumnError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/error/MissingJoinTableError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/error/MissingPrimaryColumnError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/error/UsingJoinColumnIsNotAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/error/UsingJoinColumnOnlyOnOneSideAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/error/UsingJoinTableIsNotAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata-builder/error/UsingJoinTableOnlyOnOneSideAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/ColumnMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/EmbeddedMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/EntityListenerMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/EntityMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/EntitySubscriberMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/ForeignKeyMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/IndexMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/JoinColumnMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/JoinTableMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/PropertyMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/RelationCountMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/RelationMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/TableMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/TargetMetadata.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/error/EntityMetadataAlreadySetError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/error/EntityMetadataNotSetError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/types/ColumnTypes.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/types/EventListenerTypes.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/types/RelationTypes.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metadata/types/TableTypes.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/naming-strategy/DefaultNamingStrategy.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/naming-strategy/NamingStrategyInterface.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/EntityPersistOperationsBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/EntityPersister.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/PersistOperationExecutor.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/error/CascadesNotAllowedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/operation/InsertOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/operation/JunctionInsertOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/operation/JunctionRemoveOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/operation/PersistOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/operation/RemoveOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/operation/UpdateByInverseSideOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/operation/UpdateByRelationOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/persistment/operation/UpdateOperation.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-builder/QueryBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-builder/alias/Alias.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-builder/alias/AliasMap.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-builder/transformer/PlainObjectToDatabaseEntityTransformer.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-builder/transformer/PlainObjectToNewEntityTransformer.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-builder/transformer/RawSqlResultsToEntityTransformer.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-runner/QueryRunner.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-runner/QueryRunnerProvider.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-runner/error/QueryRunnerAlreadyReleasedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/query-runner/error/QueryRunnerProviderAlreadyReleasedError.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/repository/Repository.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/repository/RepositoryAggregator.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/repository/RepositoryFactory.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/repository/SpecificRepository.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/repository/TreeRepository.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/schema-builder/SchemaBuilder.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/schema-builder/schema/ColumnSchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/schema-builder/schema/ForeignKeySchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/schema-builder/schema/IndexSchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/schema-builder/schema/PrimaryKeySchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/schema-builder/schema/TableSchema.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/subscriber/Broadcaster.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/subscriber/EntitySubscriberInterface.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/subscriber/event/InsertEvent.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/subscriber/event/RemoveEvent.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/subscriber/event/UpdateEvent.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util/DirectoryExportedClassesLoader.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util/OrmUtils.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util/sha1.d.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/index.ts" afterPath="$PROJECT_DIR$/index.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DEVELOPER.md" afterPath="$PROJECT_DIR$/DEVELOPER.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENCE" afterPath="$PROJECT_DIR$/LICENCE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/connection/Connection.ts" afterPath="$PROJECT_DIR$/src/connection/Connection.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/DiscriminatorValue.ts" afterPath="$PROJECT_DIR$/src/decorator/DiscriminatorValue.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/Embedded.ts" afterPath="$PROJECT_DIR$/src/decorator/Embedded.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/Index.ts" afterPath="$PROJECT_DIR$/src/decorator/Index.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/NamingStrategy.ts" afterPath="$PROJECT_DIR$/src/decorator/NamingStrategy.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/columns/Column.ts" afterPath="$PROJECT_DIR$/src/decorator/columns/Column.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/columns/CreateDateColumn.ts" afterPath="$PROJECT_DIR$/src/decorator/columns/CreateDateColumn.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/columns/DiscriminatorColumn.ts" afterPath="$PROJECT_DIR$/src/decorator/columns/DiscriminatorColumn.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/columns/PrimaryColumn.ts" afterPath="$PROJECT_DIR$/src/decorator/columns/PrimaryColumn.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/columns/PrimaryGeneratedColumn.ts" afterPath="$PROJECT_DIR$/src/decorator/columns/PrimaryGeneratedColumn.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/columns/UpdateDateColumn.ts" afterPath="$PROJECT_DIR$/src/decorator/columns/UpdateDateColumn.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/columns/VersionColumn.ts" afterPath="$PROJECT_DIR$/src/decorator/columns/VersionColumn.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/listeners/AfterInsert.ts" afterPath="$PROJECT_DIR$/src/decorator/listeners/AfterInsert.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/listeners/AfterLoad.ts" afterPath="$PROJECT_DIR$/src/decorator/listeners/AfterLoad.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/listeners/AfterRemove.ts" afterPath="$PROJECT_DIR$/src/decorator/listeners/AfterRemove.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/listeners/AfterUpdate.ts" afterPath="$PROJECT_DIR$/src/decorator/listeners/AfterUpdate.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/listeners/BeforeInsert.ts" afterPath="$PROJECT_DIR$/src/decorator/listeners/BeforeInsert.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/listeners/BeforeRemove.ts" afterPath="$PROJECT_DIR$/src/decorator/listeners/BeforeRemove.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/listeners/BeforeUpdate.ts" afterPath="$PROJECT_DIR$/src/decorator/listeners/BeforeUpdate.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/listeners/EventSubscriber.ts" afterPath="$PROJECT_DIR$/src/decorator/listeners/EventSubscriber.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/relations/JoinColumn.ts" afterPath="$PROJECT_DIR$/src/decorator/relations/JoinColumn.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/relations/JoinTable.ts" afterPath="$PROJECT_DIR$/src/decorator/relations/JoinTable.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/relations/ManyToMany.ts" afterPath="$PROJECT_DIR$/src/decorator/relations/ManyToMany.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/relations/ManyToOne.ts" afterPath="$PROJECT_DIR$/src/decorator/relations/ManyToOne.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/relations/OneToMany.ts" afterPath="$PROJECT_DIR$/src/decorator/relations/OneToMany.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/relations/OneToOne.ts" afterPath="$PROJECT_DIR$/src/decorator/relations/OneToOne.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/relations/RelationCount.ts" afterPath="$PROJECT_DIR$/src/decorator/relations/RelationCount.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/relations/RelationId.ts" afterPath="$PROJECT_DIR$/src/decorator/relations/RelationId.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tables/AbstractTable.ts" afterPath="$PROJECT_DIR$/src/decorator/tables/AbstractTable.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tables/ClassTableChild.ts" afterPath="$PROJECT_DIR$/src/decorator/tables/ClassTableChild.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tables/ClosureTable.ts" afterPath="$PROJECT_DIR$/src/decorator/tables/ClosureTable.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tables/EmbeddableTable.ts" afterPath="$PROJECT_DIR$/src/decorator/tables/EmbeddableTable.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tables/SingleTableChild.ts" afterPath="$PROJECT_DIR$/src/decorator/tables/SingleTableChild.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tables/Table.ts" afterPath="$PROJECT_DIR$/src/decorator/tables/Table.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tables/TableInheritance.ts" afterPath="$PROJECT_DIR$/src/decorator/tables/TableInheritance.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tree/TreeChildren.ts" afterPath="$PROJECT_DIR$/src/decorator/tree/TreeChildren.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tree/TreeLevelColumn.ts" afterPath="$PROJECT_DIR$/src/decorator/tree/TreeLevelColumn.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decorator/tree/TreeParent.ts" afterPath="$PROJECT_DIR$/src/decorator/tree/TreeParent.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/driver/websql/WebSqlDriver.ts" afterPath="$PROJECT_DIR$/src/driver/websql/WebSqlDriver.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/driver/websql/WebSqlQueryRunner.ts" afterPath="$PROJECT_DIR$/src/driver/websql/WebSqlQueryRunner.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metadata-builder/EntityMetadataBuilder.ts" afterPath="$PROJECT_DIR$/src/metadata-builder/EntityMetadataBuilder.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/naming-strategy/DefaultNamingStrategy.ts" afterPath="$PROJECT_DIR$/src/naming-strategy/DefaultNamingStrategy.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/repository/RepositoryAggregator.ts" afterPath="$PROJECT_DIR$/src/repository/RepositoryAggregator.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/sha1.ts" afterPath="$PROJECT_DIR$/src/util/sha1.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
     </list>
     <ignored path="ionic-orm.iws" />
@@ -455,23 +32,11 @@
       <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-510">
+            <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#9#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -490,7 +55,7 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="561">
               <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
               <folding />
             </state>
@@ -507,21 +72,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tsconfig.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state relative-caret-position="408">
+              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/compiled/index.js">
+      <file leaf-file-name="WebSqlDriver.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/driver/websql/WebSqlDriver.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state relative-caret-position="204">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultNamingStrategy.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/naming-strategy/DefaultNamingStrategy.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -536,15 +123,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CONTRIBUTING.md" />
-        <option value="$PROJECT_DIR$/src/driver/websql/WebSqlDriver.ts" />
-        <option value="$PROJECT_DIR$/src/naming-strategy/DefaultNamingStrategy.ts" />
         <option value="$PROJECT_DIR$/src/util/sha1.ts" />
         <option value="$PROJECT_DIR$/src/driver/websql/WebSqlQueryRunner.ts" />
         <option value="$PROJECT_DIR$/build/compiled/index.js" />
         <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/src/decorator/columns/PrimaryGeneratedColumn.ts" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/driver/websql/WebSqlDriver.ts" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/src/naming-strategy/DefaultNamingStrategy.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -591,7 +179,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -624,26 +211,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ionic-orm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ionic-orm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -671,25 +241,25 @@
       <updated>1477255450141</updated>
       <workItem from="1477255451334" duration="2557000" />
       <workItem from="1477258260213" duration="70000" />
-      <workItem from="1477258422511" duration="2640000" />
+      <workItem from="1477258422511" duration="3587000" />
+      <workItem from="1477262024013" duration="55000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5267000" />
+    <option name="totallyTimeSpent" value="6269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -698,6 +268,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -718,6 +289,67 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#9#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decorator/columns/PrimaryGeneratedColumn.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tslint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/driver/websql/WebSqlDriver.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/naming-strategy/DefaultNamingStrategy.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -730,7 +362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,9 +376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -756,9 +383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -766,21 +390,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/reflect-metadata/Reflect.js.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tsconfig.json">
@@ -804,7 +424,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#66#0" expanded="false" />
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,7 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,7 +448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,9 +455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -847,9 +462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -857,21 +469,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/reflect-metadata/Reflect.js.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tsconfig.json">
@@ -895,7 +503,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#66#0" expanded="false" />
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -914,19 +522,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/crypt/crypt.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,7 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,9 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -952,9 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -962,48 +554,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/reflect-metadata/Reflect.js.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/driver/websql/WebSqlDriver.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/naming-strategy/DefaultNamingStrategy.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#66#0" expanded="false" />
-          </folding>
-        </state>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/driver/websql/WebSqlQueryRunner.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="182" column="20" selection-start-line="182" selection-start-column="20" selection-end-line="182" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#59#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1011,17 +578,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
+    <entry file="file://$PROJECT_DIR$/index.js" />
+    <entry file="file://$PROJECT_DIR$/build/compiled/index.js" />
+    <entry file="file://$PROJECT_DIR$/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#9#78#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,21 +610,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/moment/moment.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#9#78#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/compiled/index.js">
+    <entry file="file://$PROJECT_DIR$/src/driver/websql/WebSqlDriver.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        <state relative-caret-position="204">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1060,18 +633,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state relative-caret-position="408">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+    <entry file="file://$PROJECT_DIR$/src/naming-strategy/DefaultNamingStrategy.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="340">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
           <folding />
         </state>
       </provider>

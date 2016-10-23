@@ -10,7 +10,7 @@ import {DriverPackageLoadError} from "../error/DriverPackageLoadError";
 import {ColumnTypes, ColumnType} from "../../metadata/types/ColumnTypes";
 import {ColumnMetadata} from "../../metadata/ColumnMetadata";
 import {Logger} from "../../logger/Logger";
-import * as moment from 'moment';
+import moment from 'moment';
 import {WebSqlQueryRunner} from "./WebSqlQueryRunner";
 import {QueryRunner} from "../../query-runner/QueryRunner";
 import {DriverOptionNotSetError} from "../error/DriverOptionNotSetError";

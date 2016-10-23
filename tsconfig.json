@@ -1,7 +1,7 @@
 {
     "version": "2.0.3",
     "compilerOptions": {
-        "lib": ["es5", "es6", "dom"],
+        "lib": ["es6", "dom"],
         "outDir": "dist",
         "target": "es6",
         "module": "es6",
@@ -13,6 +13,7 @@
         "declaration": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
+        "allowSyntheticDefaultImports": true,
         "stripInternal": true,
         "pretty": true,
         "strictNullChecks": true
