@@ -7,7 +7,7 @@ import {EntityMetadataValidator} from "./EntityMetadataValidator";
 import {IndexMetadata} from "../metadata/IndexMetadata";
 import {JoinColumnMetadata} from "../metadata/JoinColumnMetadata";
 import {TableMetadata} from "../metadata/TableMetadata";
-import {getMetadataArgsStorage, getFromContainer} from "../index";
+import {getMetadataArgsStorage, getFromContainer} from "../../index";
 import {RelationMetadata} from "../metadata/RelationMetadata";
 import {JoinTableMetadata} from "../metadata/JoinTableMetadata";
 import {JunctionEntityMetadataBuilder} from "./JunctionEntityMetadataBuilder";

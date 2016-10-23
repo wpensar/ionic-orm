@@ -1,5 +1,5 @@
 import {ObjectType} from "../common/ObjectType";
-import {getMetadataArgsStorage} from "../index";
+import {getMetadataArgsStorage} from "../../index";
 import {EmbeddedMetadataArgs} from "../metadata-args/EmbeddedMetadataArgs";
 
 /**

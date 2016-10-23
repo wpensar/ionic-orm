@@ -1,4 +1,4 @@
-import {getMetadataArgsStorage} from "../index";
+import {getMetadataArgsStorage} from "../../index";
 import {IndexMetadataArgs} from "../metadata-args/IndexMetadataArgs";
 import {IndexOptions} from "./options/IndexOptions";
 

@@ -1,4 +1,4 @@
-import {getMetadataArgsStorage} from "../../index";
+import {getMetadataArgsStorage} from "../../../index";
 import {ColumnTypes} from "../../metadata/types/ColumnTypes";
 import {ColumnOptions} from "../options/ColumnOptions";
 import {ColumnMetadataArgs} from "../../metadata-args/ColumnMetadataArgs";

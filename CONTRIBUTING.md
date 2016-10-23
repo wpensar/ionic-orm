@@ -12,9 +12,9 @@ As a contributor, here are the guidelines we would like you to follow:
 
 There are several ways how you can ask your question:
 
-* You can create a question on [StackOverflow](stackoverflow.com/questions/tagged/typeorm) where the questions should be tagged with tag `typeorm`.
-* You can create issue on [github](https://github.com/typeorm/typeorm/issues)
-* You can write your questions in our [gitter channel](https://gitter.im/pleerock/typeorm)
+* You can create a question on [StackOverflow](stackoverflow.com/questions/tagged/ionic-orm) where the questions should be tagged with tag `ionic-orm`.
+* You can create issue on [github](https://github.com/ionic-orm/ionic-orm/issues)
+* You can write your questions in our [gitter channel](https://gitter.im/pleerock/ionic-orm)
 * If you have a Skype then try to find me there (`Umed Khudoiberdiev`)
 
 Prefered way if you create your question on StackOverflow, or create a github issue.
@@ -22,7 +22,7 @@ Prefered way if you create your question on StackOverflow, or create a github is
 ## <a name="issue"></a> Found a Bug?
 
 If you find a bug in the source code, you can help us by [submitting an issue](#submit-issue) to our 
-[GitHub Repository](https://github.com/typeorm/typeorm). 
+[GitHub Repository](https://github.com/ionic-orm/ionic-orm).
 Even better, you can [submit a Pull Request](#submit-pr) with a fix.
 
 ## <a name="feature"></a> Missing a Feature?
@@ -47,12 +47,12 @@ maybe an issue for your problem already exists and the discussion might inform y
 We want to fix all the issues as soon as possible, but before fixing a bug we need to reproduce and confirm it.
  In order to reproduce bugs we ask you to provide a minimal code snippet that shows a reproduction of the problem. 
 
-You can file new issues by filling out our [new issue form](https://github.com/typeorm/typeorm/issues/new).
+You can file new issues by filling out our [new issue form](https://github.com/ionic-orm/ionic-orm/issues/new).
 
 ### <a name="submit-pr"></a> Submitting a Pull Request (PR)
 Before you submit your Pull Request (PR) consider the following guidelines:
 
-* Search [GitHub](https://github.com/typeorm/typeorm/pulls) for an open or closed PR
+* Search [GitHub](https://github.com/ionic-orm/ionic-orm/pulls) for an open or closed PR
   that relates to your submission. You don't want to duplicate effort.
 * Make your changes in a new git branch:
 
@@ -75,7 +75,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
     git push origin my-fix-branch
     ```
 
-* In GitHub, send a pull request to `typeorm:master`.
+* In GitHub, send a pull request to `ionic-orm:master`.
 * If we suggest changes then:
   * Make the required updates.
   * Re-run the TypeORM test suites to ensure tests are still passing.

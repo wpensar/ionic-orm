@@ -1,7 +1,7 @@
 import {ColumnOptions} from "../options/ColumnOptions";
 import {ColumnTypeUndefinedError} from "../error/ColumnTypeUndefinedError";
 import {GeneratedOnlyForPrimaryError} from "../error/GeneratedOnlyForPrimaryError";
-import {getMetadataArgsStorage} from "../../index";
+import {getMetadataArgsStorage} from "../../../index";
 import {ColumnType, ColumnTypes} from "../../metadata/types/ColumnTypes";
 import {ColumnMetadataArgs} from "../../metadata-args/ColumnMetadataArgs";
 

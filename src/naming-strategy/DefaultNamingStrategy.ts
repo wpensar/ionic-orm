@@ -1,6 +1,6 @@
 import {NamingStrategyInterface} from "./NamingStrategyInterface";
 import { sha1 } from '../util/sha1'
-import _ from "lodash";
+import * as _ from "lodash";
 
 /**
  * Naming strategy that is used by default.

@@ -1,4 +1,4 @@
-import {getMetadataArgsStorage} from "../../index";
+import {getMetadataArgsStorage} from "../../../index";
 import {JoinTableOptions} from "../options/JoinTableOptions";
 import {JoinTableMetadataArgs} from "../../metadata-args/JoinTableMetadataArgs";
 

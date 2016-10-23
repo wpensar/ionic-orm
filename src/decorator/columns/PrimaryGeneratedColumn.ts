@@ -1,6 +1,6 @@
 import {ColumnOptions} from "../options/ColumnOptions";
 import {ColumnTypes} from "../../metadata/types/ColumnTypes";
-import {getMetadataArgsStorage} from "../../index";
+import {getMetadataArgsStorage} from "../../../index";
 import {PrimaryColumnCannotBeNullableError} from "../error/PrimaryColumnCannotBeNullableError";
 import {ColumnMetadataArgs} from "../../metadata-args/ColumnMetadataArgs";
 

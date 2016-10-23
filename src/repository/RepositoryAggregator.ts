@@ -2,7 +2,7 @@ import {Repository} from "./Repository";
 import {EntityMetadata} from "../metadata/EntityMetadata";
 import {SpecificRepository} from "./SpecificRepository";
 import {Connection} from "../connection/Connection";
-import {getFromContainer} from "../index";
+import {getFromContainer} from "../../index";
 import {RepositoryFactory} from "./RepositoryFactory";
 import {TreeRepository} from "./TreeRepository";
 import {QueryRunnerProvider} from "../query-runner/QueryRunnerProvider";

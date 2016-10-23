@@ -1,6 +1,6 @@
 import {RelationOptions} from "../options/RelationOptions";
 import {RelationTypes} from "../../metadata/types/RelationTypes";
-import {getMetadataArgsStorage} from "../../index";
+import {getMetadataArgsStorage} from "../../../index";
 import {ObjectType} from "../../common/ObjectType";
 import {RelationMetadataArgs} from "../../metadata-args/RelationMetadataArgs";
 

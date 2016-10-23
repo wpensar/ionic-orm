@@ -1,4 +1,4 @@
-export module sha1
+export namespace sha1
 {
 
   var POW_2_24 = Math.pow(2, 24);

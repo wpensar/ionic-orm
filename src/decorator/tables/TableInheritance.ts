@@ -1,4 +1,4 @@
-import {getMetadataArgsStorage} from "../../index";
+import {getMetadataArgsStorage} from "../../../index";
 import {InheritanceMetadataArgs} from "../../metadata-args/InheritanceMetadataArgs";
 
 /**

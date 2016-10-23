@@ -180,7 +180,7 @@ export class WebSqlQueryRunner implements QueryRunner {
                     _this.logger.logFailedQuery(sql, parameters);
                     _this.logger.logQueryError(error);
                     fail(error);
-                } )
+                } );
             });
 
         });

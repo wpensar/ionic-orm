@@ -34,19 +34,19 @@ following products on your development machine:
 Fork and clone the repository:
 
 1. Login to your GitHub account or create one by following the instructions given [here](https://github.com/signup/free).
-2. [Fork](http://help.github.com/forking) the [main TypeORM repository](https://github.com/typeorm/typeorm).
+2. [Fork](http://help.github.com/forking) the [main TypeORM repository](https://github.com/ionic-orm/ionic-orm).
 3. Clone your fork of the TypeORM repository and define an `upstream` remote pointing back to
    the TypeORM repository that you forked in the first place.
 
 ```shell
 # Clone your GitHub repository:
-git clone git@github.com:<github username>/typeorm.git
+git clone git@github.com:<github username>/ionic-orm.git
 
 # Go to the TypeORM directory:
-cd typeorm
+cd ionic-orm
 
 # Add the main TyepORM repository as an upstream remote to your repository:
-git remote add upstream https://github.com/typeorm/typeorm.git
+git remote add upstream https://github.com/ionic-orm/ionic-orm.git
 ```
 ## Installing NPM Modules
 

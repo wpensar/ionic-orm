@@ -1,17 +1,13 @@
 {
   "name": "ionic-orm",
-  "private": true,
-  "version": "0.0.1-alpha.01",
+  "private": false,
+  "version": "0.0.1-alpha.2",
   "description": "Data-mapper ORM for Ionic WebSQL and SQLite",
   "license": "MIT",
-  "readmeFilename": "README.md",
-  "author": {
-    "name": "Brady Liles",
-    "email": "bradyliles@outlook.com"
-  },
+  "author": "Brady Liles <bradyliles@outlook.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BradyLiles/ionic-orm"
+    "url": "git+https://github.com/BradyLiles/ionic-orm.git"
   },
   "bugs": {
     "url": "https://github.com/BradyLiles/ionic-orm/issues"
@@ -32,7 +28,20 @@
     "@types/lodash": "^4.14.37",
     "lodash": "^4.16.4",
     "moment": "^2.15.1",
-    "reflect-metadata": "^0.1.8",
-    "sha1": "^1.1.1"
-  }
+    "reflect-metadata": "^0.1.8"
+  },
+  "homepage": "https://github.com/BradyLiles/ionic-orm#readme",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "orm",
+    "ionic",
+    "cordova",
+    "ionic-orm",
+    "websql",
+    "websql-orm",
+    "sqlite-orm"
+  ]
 }

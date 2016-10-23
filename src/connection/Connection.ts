@@ -7,7 +7,7 @@ import {EntityListenerMetadata} from "../metadata/EntityListenerMetadata";
 // import {EntityManager} from "../entity-manager/EntityManager";
 // import {importClassesFromDirectories, importJsonsFromDirectories} from "../util/DirectoryExportedClassesLoader";
 import { getFromContainer} from "../container";
-import {getMetadataArgsStorage } from "../index";
+import {getMetadataArgsStorage } from "../../index";
 import {EntityMetadataBuilder} from "../metadata-builder/EntityMetadataBuilder";
 import {DefaultNamingStrategy} from "../naming-strategy/DefaultNamingStrategy";
 import {EntityMetadataCollection} from "../metadata-args/collection/EntityMetadataCollection";

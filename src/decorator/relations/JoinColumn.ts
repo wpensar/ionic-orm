@@ -1,4 +1,4 @@
-import {getMetadataArgsStorage} from "../../index";
+import {getMetadataArgsStorage} from "../../../index";
 import {JoinColumnOptions} from "../options/JoinColumnOptions";
 import {JoinColumnMetadataArgs} from "../../metadata-args/JoinColumnMetadataArgs";
 

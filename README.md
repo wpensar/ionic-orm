@@ -1,6 +1,6 @@
 # TypeORM
 
-[![Join the chat at https://gitter.im/pleerock/typeorm](https://badges.gitter.im/pleerock/typeorm.svg)](https://gitter.im/pleerock/typeorm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/pleerock/ionic-orm](https://badges.gitter.im/pleerock/ionic-orm.svg)](https://gitter.im/pleerock/ionic-orm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 > Please support a project by simply putting a github star. 
 Share this library with friends on twitter and everywhere else you can.
@@ -37,7 +37,7 @@ TypeORM is highly influenced by other ORMs, such as [Hibernate](http://hibernate
 
 1. Install module:
 
-    `npm install typeorm --save`
+    `npm install ionic-orm --save`
 
 2. You need to install `reflect-metadata` shim:
 
@@ -94,7 +94,7 @@ export class Photo {
 Now lets make it entity:
 
 ```typescript
-import {Table} from "typeorm";
+import {Table} from "ionic-orm";
 
 @Table()
 export class Photo {
@@ -114,7 +114,7 @@ Let's add some columns.
 You can make any property of your model a column by using a `@Column` decorator:
 
 ```typescript
-import {Table, Column} from "typeorm";
+import {Table, Column} from "ionic-orm";
 
 @Table()
 export class Photo {
@@ -149,7 +149,7 @@ This is requirement and you can't avoid it.
 To make a column a primary you need to use `@PrimaryColumn` decorator.
 
 ```typescript
-import {Table, Column, PrimaryColumn} from "typeorm";
+import {Table, Column, PrimaryColumn} from "ionic-orm";
 
 @Table()
 export class Photo {
@@ -180,7 +180,7 @@ Now, lets say you want to make your id column to be auto-generated (this is know
 To do that you need to change your column's type to integer and set a `{ generated: true }` in your primary column's options:
 
 ```typescript
-import {Table, Column, PrimaryColumn} from "typeorm";
+import {Table, Column, PrimaryColumn} from "ionic-orm";
 
 @Table()
 export class Photo {
@@ -213,7 +213,7 @@ there is a special decorator called `@PrimaryGeneratedColumn` to do the same.
 Let's use it instead:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn} from "typeorm";
+import {Table, Column, PrimaryGeneratedColumn} from "ionic-orm";
 
 @Table()
 export class Photo {
@@ -246,7 +246,7 @@ We don't want all our columns to be limited varchars or excessive floats.
 Lets setup correct data types:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn} from "typeorm";
+import {Table, Column, PrimaryGeneratedColumn} from "ionic-orm";
 
 @Table()
 export class Photo {
@@ -279,7 +279,7 @@ Now, when our entity is created, lets create `app.ts` file and setup our connect
 
 ```typescript
 import "reflect-metadata";
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 
 createConnection({
@@ -317,7 +317,7 @@ But this is not very convenient, and instead we can setup the whole directory,
 where from all entities will be connected and used in our connection:
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 
 createConnection({
     driver: {
@@ -362,7 +362,7 @@ Now you can run your `app.ts`, connection with database will be initialized, and
 Now lets create a new photo to save it in the database:
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 
 createConnection(/*...*/).then(connection => {
 
@@ -387,7 +387,7 @@ createConnection(/*...*/).then(connection => {
 Lets use latest TypeScript advantages and use async/await syntax instead:
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -413,7 +413,7 @@ Using entity managers you can manipulate any entity in your app.
 Now lets load our saved entity:
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -435,7 +435,7 @@ When you deal with entities a lot, Repositories are more convenient to use then 
 
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -463,7 +463,7 @@ createConnection(/*...*/).then(async connection => {
 Lets try more load operations using Repository:
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -496,7 +496,7 @@ createConnection(/*...*/).then(async connection => {
 Now lets load a single photo from the database, update it and save it:
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -517,7 +517,7 @@ Now let's remove our photo from the database:
 
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 
 createConnection(/*...*/).then(async connection => {
@@ -537,7 +537,7 @@ Lets create a one-to-one relation with another class.
 Lets create a new class called PhotoMetadata.ts which will contain a PhotoMetadata class which supposed to contain our photo's additional meta-information:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn} from "typeorm";
+import {Table, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn} from "ionic-orm";
 import {Photo} from "./Photo";
 
 @Table()
@@ -599,7 +599,7 @@ If you run the app you'll see a new generated table, and it will contain a colum
 Now lets save a photo, its metadata and attach them to each other.
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 import {PhotoMetadata} from "./entity/PhotoMetadata";
 
@@ -646,7 +646,7 @@ To fix it we should add inverse relation and make relations between PhotoMetadat
 Let's modify our entities:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn} from "typeorm";
+import {Table, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn} from "ionic-orm";
 import {Photo} from "./Photo";
 
 @Table()
@@ -661,7 +661,7 @@ export class PhotoMetadata {
 ```   
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, OneToOne} from "typeorm";
+import {Table, Column, PrimaryGeneratedColumn, OneToOne} from "ionic-orm";
 import {PhotoMetadata} from "./PhotoMetadata";
 
 @Table()
@@ -692,7 +692,7 @@ Lets use FindOptions first.
 Using this you can customize your query to perform more complex queries.
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 import {PhotoMetadata} from "./entity/PhotoMetadata";
 
@@ -722,7 +722,7 @@ In `"photo.metadata"` "photo" is an alias you used, and "metadata" is a property
 Lets use `QueryBuilder` for the same purpose. QueryBuilder allows to use more complex queries in an elegant way:
 
 ```typescript
-import {createConnection} from "typeorm";
+import {createConnection} from "ionic-orm";
 import {Photo} from "./entity/Photo";
 import {PhotoMetadata} from "./entity/PhotoMetadata";
 
@@ -799,7 +799,7 @@ Lets say a photo has one author, and each author can have many photos.
 First, lets create Author class:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn} from "typeorm";
+import {Table, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn} from "ionic-orm";
 import {Photo} from "./Photo";
 
 @Table()
@@ -822,7 +822,7 @@ OneToMany is always an inverse side of relation, and it can't exist without Many
 Now lets add owner side of relationship into the Photo entity:
 
 ```typescript
-import {Table, Column, PrimaryGeneratedColumn, ManyToOne} from "typeorm";
+import {Table, Column, PrimaryGeneratedColumn, ManyToOne} from "ionic-orm";
 import {PhotoMetadata} from "./PhotoMetadata";
 import {Author} from "./Author";
 
@@ -873,7 +873,7 @@ Lets say a photo can be in many albums, and multiple can have many photos.
 Lets create an `Album` class:
 
 ```typescript
-import {Table, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable} from "typeorm";
+import {Table, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable} from "ionic-orm";
 
 @Table()
 export class Album {
@@ -993,23 +993,23 @@ and will select only 10 results (pagination limit).
 Selection result will be ordered by id in descending order. 
 Photo's albums will be left-joined and photo's metadata will be inner joined.
 
-You'll use query builder in your application a lot. Learn more about QueryBuilder [here](https://typeorm.github.io/query-builder.html).
+You'll use query builder in your application a lot. Learn more about QueryBuilder [here](https://ionic-orm.github.io/query-builder.html).
 
 ## Learn more
 
-* [Connection and connection options](https://typeorm.github.io/connection.html)
-* [Connection Manager](https://typeorm.github.io/connection-manager.html)
-* [Databases and drivers](https://typeorm.github.io/databases-and-drivers.html)
-* [Updating database schema](https://typeorm.github.io/updating-database-schema.html)
-* [Tables and columns](https://typeorm.github.io/tables-and-columns.html)
-* [Relations](https://typeorm.github.io/relations.html)
-* [Indices](https://typeorm.github.io/indices.html)
-* [Repository](https://typeorm.github.io/repository.html)
-* [Query Builder](https://typeorm.github.io/query-builder.html)
-* [Entity Manager](https://typeorm.github.io/entity-manager.html)
-* [Subscribers and entity listeners](https://typeorm.github.io/subscribers-and-entity-listeners.html)
-* [Using service container](https://typeorm.github.io/using-service-container.html)
-* [Decorators Reference](https://typeorm.github.io/decorators-reference.html)
+* [Connection and connection options](https://ionic-orm.github.io/connection.html)
+* [Connection Manager](https://ionic-orm.github.io/connection-manager.html)
+* [Databases and drivers](https://ionic-orm.github.io/databases-and-drivers.html)
+* [Updating database schema](https://ionic-orm.github.io/updating-database-schema.html)
+* [Tables and columns](https://ionic-orm.github.io/tables-and-columns.html)
+* [Relations](https://ionic-orm.github.io/relations.html)
+* [Indices](https://ionic-orm.github.io/indices.html)
+* [Repository](https://ionic-orm.github.io/repository.html)
+* [Query Builder](https://ionic-orm.github.io/query-builder.html)
+* [Entity Manager](https://ionic-orm.github.io/entity-manager.html)
+* [Subscribers and entity listeners](https://ionic-orm.github.io/subscribers-and-entity-listeners.html)
+* [Using service container](https://ionic-orm.github.io/using-service-container.html)
+* [Decorators Reference](https://ionic-orm.github.io/decorators-reference.html)
 
 ## Samples
 

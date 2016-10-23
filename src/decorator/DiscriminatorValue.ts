@@ -1,4 +1,4 @@
-import {getMetadataArgsStorage} from "../index";
+import {getMetadataArgsStorage} from "../../index";
 import {DiscriminatorValueMetadataArgs} from "../metadata-args/DiscriminatorValueMetadataArgs";
 
 /**
