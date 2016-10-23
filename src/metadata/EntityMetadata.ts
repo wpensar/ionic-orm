@@ -600,14 +600,14 @@ export class EntityMetadata {
     /**
      * Checks if relation with the given property name exist.
      */
-    hasRelationWithPropertyName(propertyName: string): boolean {
+    hasRelationWithPropertyName(propertyName: string|any): boolean {
         return !!this.relations.find(relation => relation.propertyName === propertyName);
     }
 
     /**
      * Finds relation with the given property name.
      */
-    findRelationWithPropertyName(propertyName: string): RelationMetadata {
+    findRelationWithPropertyName(propertyName: string|any): RelationMetadata {
         const relation = this.relations.find(relation => relation.propertyName === propertyName);
         if (!relation)
             throw new Error(`Relation with property name ${propertyName} in ${this.name} entity was not found.`);

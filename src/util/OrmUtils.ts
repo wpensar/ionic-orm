@@ -1,6 +1,8 @@
 export class OrmUtils {
     
     static groupBy<T, R>(array: T[], propertyCallback: (item: T) => R): { id: R, items: T[] }[] {
+        console.log("the array");
+        console.log(array);
         return array.reduce((groupedArray, value) => {
             const key = propertyCallback(value);
             let grouped = groupedArray.find(i => i.id === key);

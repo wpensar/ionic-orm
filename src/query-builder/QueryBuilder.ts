@@ -4,7 +4,6 @@ import {RawSqlResultsToEntityTransformer} from "./transformer/RawSqlResultsToEnt
 import {EntityMetadata} from "../metadata/EntityMetadata";
 import {ObjectLiteral} from "../common/ObjectLiteral";
 import {QueryRunner} from "../query-runner/QueryRunner";
-import {SqlServerDriver} from "../driver/sqlserver/SqlServerDriver";
 import {OrderByCondition} from "../find-options/OrderByCondition";
 import {Connection} from "../connection/Connection";
 
@@ -944,19 +943,11 @@ export class QueryBuilder<Entity> {
             }).join(", ");
             idsQuery += ` FROM (${sql}) ${distinctAlias}`; // TODO: WHAT TO DO WITH PARAMETERS HERE? DO THEY WORK?
 
-            if (this.connection.driver instanceof SqlServerDriver) { // todo: temporary. need to refactor and make a proper abstraction
 
-                if (this.firstResult)
-                    idsQuery += ` ORDER BY "ids_${metadata.firstPrimaryColumn.name}" OFFSET ${this.firstResult} ROWS`;
-                if (this.maxResults)
-                    idsQuery += " FETCH NEXT " + this.maxResults + " ROWS ONLY";
-            } else {
-
-                if (this.maxResults)
-                    idsQuery += " LIMIT " + this.maxResults;
-                if (this.firstResult)
-                    idsQuery += " OFFSET " + this.firstResult;
-            }
+            if (this.maxResults)
+                idsQuery += " LIMIT " + this.maxResults;
+            if (this.firstResult)
+                idsQuery += " OFFSET " + this.firstResult;
 
             try {
                 return await queryRunner.query(idsQuery, parameters)

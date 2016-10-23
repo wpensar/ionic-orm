@@ -1,5 +1,6 @@
 import {NamingStrategyInterface} from "./NamingStrategyInterface";
-import * as _ from "lodash";
+import { sha1 } from '../util/sha1'
+import _ from "lodash";
 
 /**
  * Naming strategy that is used by default.
@@ -27,7 +28,7 @@ export class DefaultNamingStrategy implements NamingStrategyInterface {
             return customName;
         
         const key = "ind_" + tableName + "_" + columns.join("_");
-        return "ind_" + require("sha1")(key);
+        return "ind_" + sha1.hash(key);
     }
 
     joinColumnInverseSideName(joinColumnName: string, propertyName: string): string {
@@ -64,7 +65,7 @@ export class DefaultNamingStrategy implements NamingStrategyInterface {
 
     foreignKeyName(tableName: string, columnNames: string[], referencedTableName: string, referencedColumnNames: string[]): string {
         const key = `${tableName}_${columnNames.join("_")}_${referencedTableName}_${referencedColumnNames.join("_")}`;
-        return "fk_" + require("sha1")(key).substr(0, 27); // todo: use crypto instead?
+        return "fk_" + sha1.hash((key).substr(0, 27)); // todo: use crypto instead?
     }
 
     classTableInheritanceParentColumnName(parentTableName: any, parentTableIdPropertyName: any): string {

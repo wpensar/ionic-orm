@@ -1,8 +1,9 @@
+/*
 import * as path from "path";
 
-/**
+/!**
  * Loads all exported classes from the given directory.
- */
+ *!/
 export function importClassesFromDirectories(directories: string[], formats = [".js", ".ts"]): Function[] {
 
     function loadFileClasses(exported: any, allLoaded: Function[]) {
@@ -42,4 +43,4 @@ export function importJsonsFromDirectories(directories: string[], format = ".jso
     return allFiles
         .filter(file => path.extname(file) === format)
         .map(file => require(file));
-}
+}*/

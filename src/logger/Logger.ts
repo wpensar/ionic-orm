@@ -20,8 +20,7 @@ export class Logger {
      * Logs query and parameters used in it.
      */
     logQuery(query: string, parameters?: any[]) {
-        if (this.options.logQueries ||
-            process.env.LOGGER_CLI_SCHEMA_SYNC)
+        if (this.options.logQueries /*|| process.env.LOGGER_CLI_SCHEMA_SYNC*/)
             this.log("log", `executing query: ${query}${parameters && parameters.length ? " -- PARAMETERS: " + JSON.stringify(parameters) : ""}`);
     }
 
@@ -29,9 +28,7 @@ export class Logger {
      * Logs query that failed.
      */
     logFailedQuery(query: string, parameters?: any[]) {
-        if (this.options.logQueries ||
-            this.options.logOnlyFailedQueries ||
-            process.env.LOGGER_CLI_SCHEMA_SYNC)
+        if (this.options.logQueries || this.options.logOnlyFailedQueries /*|| process.env.LOGGER_CLI_SCHEMA_SYNC*/)
             this.log("error", `query failed: ${query}${parameters && parameters.length ? " -- PARAMETERS: " + JSON.stringify(parameters) : ""}`);
     }
 
@@ -39,8 +36,7 @@ export class Logger {
      * Logs failed query's error.
      */
     logQueryError(error: any) {
-        if (this.options.logFailedQueryError ||
-            process.env.LOGGER_CLI_SCHEMA_SYNC)
+        if (this.options.logFailedQueryError /*|| process.env.LOGGER_CLI_SCHEMA_SYNC*/)
             this.log("error", "error during executing query:" + error);
     }
 
@@ -48,8 +44,7 @@ export class Logger {
      * Logs events from the schema build process.
      */
     logSchemaBuild(message: string) {
-        if (this.options.logSchemaCreation ||
-            process.env.LOGGER_CLI_SCHEMA_SYNC)
+        if (this.options.logSchemaCreation /*|| process.env.LOGGER_CLI_SCHEMA_SYNC*/)
             this.log("info", message);
     }
 

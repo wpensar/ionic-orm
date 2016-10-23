@@ -13,7 +13,7 @@ export class DriverUtils {
      * Normalizes and builds a new driver options.
      * Extracts settings from connection url and sets to a new options object.
      */
-    static buildDriverOptions(options: DriverOptions, buildOptions?: { useSid: boolean }): DriverOptions {
+    /*static buildDriverOptions(options: DriverOptions, buildOptions?: { useSid: boolean }): DriverOptions {
         if (options.url) {
             const parsedUrl = this.parseConnectionUrl(options.url);
             if (buildOptions && buildOptions.useSid) {
@@ -40,7 +40,7 @@ export class DriverUtils {
             }
         }
         return Object.assign({}, options);
-    }
+    }*/
 
     // -------------------------------------------------------------------------
     // Private Static Methods
@@ -49,7 +49,7 @@ export class DriverUtils {
     /**
      * Extracts connection data from the connection url.
      */
-    private static parseConnectionUrl(url: string) {
+    /*private static parseConnectionUrl(url: string) {
         const urlParser = require("url");
         const params = urlParser.parse(url);
         const auth = params.auth.split(":");
@@ -61,6 +61,6 @@ export class DriverUtils {
             port: parseInt(params.port),
             database: params.pathname.split("/")[1]
         };
-    }
+    }*/
 
 }

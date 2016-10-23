@@ -1,12 +1,13 @@
 import {Driver} from "../driver/Driver";
-import {Repository} from "../repository/Repository";
+// import {Repository} from "../repository/Repository";
 import {EntitySubscriberInterface} from "../subscriber/EntitySubscriberInterface";
 import {RepositoryNotFoundError} from "./error/RepositoryNotFoundError";
 import {ObjectType} from "../common/ObjectType";
 import {EntityListenerMetadata} from "../metadata/EntityListenerMetadata";
-import {EntityManager} from "../entity-manager/EntityManager";
-import {importClassesFromDirectories, importJsonsFromDirectories} from "../util/DirectoryExportedClassesLoader";
-import {getMetadataArgsStorage, getFromContainer} from "../index";
+// import {EntityManager} from "../entity-manager/EntityManager";
+// import {importClassesFromDirectories, importJsonsFromDirectories} from "../util/DirectoryExportedClassesLoader";
+import { getFromContainer} from "../container";
+import {getMetadataArgsStorage } from "../index";
 import {EntityMetadataBuilder} from "../metadata-builder/EntityMetadataBuilder";
 import {DefaultNamingStrategy} from "../naming-strategy/DefaultNamingStrategy";
 import {EntityMetadataCollection} from "../metadata-args/collection/EntityMetadataCollection";
@@ -14,22 +15,29 @@ import {NoConnectionForRepositoryError} from "./error/NoConnectionForRepositoryE
 import {CannotImportAlreadyConnectedError} from "./error/CannotImportAlreadyConnectedError";
 import {CannotCloseNotConnectedError} from "./error/CannotCloseNotConnectedError";
 import {CannotConnectAlreadyConnectedError} from "./error/CannotConnectAlreadyConnectedError";
-import {TreeRepository} from "../repository/TreeRepository";
+// import {TreeRepository} from "../repository/TreeRepository";
 import {NamingStrategyInterface} from "../naming-strategy/NamingStrategyInterface";
 import {NamingStrategyNotFoundError} from "./error/NamingStrategyNotFoundError";
 import {RepositoryNotTreeError} from "./error/RepositoryNotTreeError";
-import {EntitySchema} from "../entity-schema/EntitySchema";
+// import {EntitySchema} from "../entity-schema/EntitySchema";
 import {CannotSyncNotConnectedError} from "./error/CannotSyncNotConnectedError";
 import {CannotUseNamingStrategyNotConnectedError} from "./error/CannotUseNamingStrategyNotConnectedError";
 import {Broadcaster} from "../subscriber/Broadcaster";
 import {CannotGetEntityManagerNotConnectedError} from "./error/CannotGetEntityManagerNotConnectedError";
 import {LazyRelationsWrapper} from "../lazy-loading/LazyRelationsWrapper";
-import {SpecificRepository} from "../repository/SpecificRepository";
-import {RepositoryAggregator} from "../repository/RepositoryAggregator";
+// import {SpecificRepository} from "../repository/SpecificRepository";
+// import {RepositoryAggregator} from "../repository/RepositoryAggregator";
 import {EntityMetadata} from "../metadata/EntityMetadata";
 import {SchemaBuilder} from "../schema-builder/SchemaBuilder";
 import {Logger} from "../logger/Logger";
+import {EntityManager} from "../entity-manager/EntityManager";
+import {RepositoryAggregator} from "../repository/RepositoryAggregator";
 import {QueryRunnerProvider} from "../query-runner/QueryRunnerProvider";
+import {EntitySchema} from "../entity-schema/EntitySchema";
+import {Repository} from "../repository/Repository";
+import {TreeRepository} from "../repository/TreeRepository";
+import {SpecificRepository} from "../repository/SpecificRepository";
+// import {QueryRunnerProvider} from "../query-runner/QueryRunnerProvider";
 
 /**
  * Connection is a single database connection to a specific database of a database management system.
@@ -146,12 +154,12 @@ export class Connection {
     /**
      * Gets entity manager that allows to perform repository operations with any entity in this connection.
      */
-    get entityManager() {
+    /*get entityManager() {
         if (!this.isConnected)
             throw new CannotGetEntityManagerNotConnectedError(this.name);
         
         return this._entityManager;
-    }
+    }*/
 
     // -------------------------------------------------------------------------
     // Public Methods
@@ -226,35 +234,34 @@ export class Connection {
     /**
      * Imports entities from the given paths (directories) and registers them in the current connection.
      */
-    importEntitiesFromDirectories(paths: string[]): this {
+    /*importEntitiesFromDirectories(paths: string[]): this {
         this.importEntities(importClassesFromDirectories(paths));
         return this;
     }
 
-    /**
+    /!**
      * Imports entity schemas from the given paths (directories) and registers them in the current connection.
-     */
+     *!/
     importEntitySchemaFromDirectories(paths: string[]): this {
         this.importEntitySchemas(importJsonsFromDirectories(paths));
         return this;
     }
 
-    /**
+    /!**
      * Imports subscribers from the given paths (directories) and registers them in the current connection.
-     */
+     *!/
     importSubscribersFromDirectories(paths: string[]): this {
         this.importSubscribers(importClassesFromDirectories(paths));
         return this;
     }
 
-    /**
+    /!**
      * Imports naming strategies from the given paths (directories) and registers them in the current connection.
-     */
+     *!/
     importNamingStrategiesFromDirectories(paths: string[]): this {
         this.importEntities(importClassesFromDirectories(paths));
         return this;
-    }
-
+    }*/
     /**
      * Imports entities and registers them in the current connection.
      */

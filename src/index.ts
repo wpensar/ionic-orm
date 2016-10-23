@@ -1,21 +1,18 @@
 /*!
  */
 
-import {DriverOptions} from "./driver/DriverOptions";
 import {ConnectionManager} from "./connection/ConnectionManager";
 import {Connection} from "./connection/Connection";
-import {MetadataArgsStorage} from "./metadata-args/MetadataArgsStorage";
 import {ConnectionOptions} from "./connection/ConnectionOptions";
-import {getFromContainer, defaultContainer} from "./container";
+import {defaultContainer, getFromContainer} from "./container";
 import {ObjectType} from "./common/ObjectType";
-import {Repository} from "./repository/Repository";
-import {EntityManager} from "./entity-manager/EntityManager";
-
-// -------------------------------------------------------------------------
-// Commonly Used exports
-// -------------------------------------------------------------------------
+import {MetadataArgsStorage} from "./metadata-args/MetadataArgsStorage";
 
 export * from "./container";
+export {Connection} from "./connection/Connection";
+export {ConnectionManager} from "./connection/ConnectionManager";
+export {ConnectionOptions} from "./connection/ConnectionOptions";
+
 export * from "./decorator/columns/Column";
 export * from "./decorator/columns/CreateDateColumn";
 export * from "./decorator/columns/DiscriminatorColumn";
@@ -61,22 +58,6 @@ export * from "./decorator/tables/TableInheritance";
 export * from "./decorator/Embedded";
 export * from "./decorator/DiscriminatorValue";
 
-export {Connection} from "./connection/Connection";
-export {ConnectionManager} from "./connection/ConnectionManager";
-export {ConnectionOptions} from "./connection/ConnectionOptions";
-export {DriverOptions} from "./driver/DriverOptions";
-export {Driver} from "./driver/Driver";
-export {QueryBuilder} from "./query-builder/QueryBuilder";
-export {EntityManager} from "./entity-manager/EntityManager";
-export {Repository} from "./repository/Repository";
-export {TreeRepository} from "./repository/TreeRepository";
-export {SpecificRepository} from "./repository/SpecificRepository";
-export {FindOptions} from "./find-options/FindOptions";
-export {InsertEvent} from "./subscriber/event/InsertEvent";
-export {UpdateEvent} from "./subscriber/event/UpdateEvent";
-export {RemoveEvent} from "./subscriber/event/RemoveEvent";
-export {EntitySubscriberInterface} from "./subscriber/EntitySubscriberInterface";
-
 // -------------------------------------------------------------------------
 // Commonly used functionality
 // -------------------------------------------------------------------------
@@ -113,14 +94,14 @@ export function getConnectionManager(): ConnectionManager {
  * it will try to create connection from environment variables.
  * There are several environment variables you can set:
  *
- * - TYPEORM_DRIVER_TYPE - driver type. Can be "mysql", "mysql2", "postgres", "mariadb", "sqlite", "oracle" or "mssql".
+ * - TYPEORM_DRIVER_TYPE - driver type. Can be "mysql", "mysql2", "postgres", "mariadb", "websql", "oracle" or "mssql".
  * - TYPEORM_URL - database connection url. Should be a string.
  * - TYPEORM_HOST - database host. Should be a string.
  * - TYPEORM_PORT - database access port. Should be a number.
  * - TYPEORM_USERNAME - database username. Should be a string.
  * - TYPEORM_PASSWORD - database user's password. Should be a string.
  * - TYPEORM_SID - database's SID. Used only for oracle databases. Should be a string.
- * - TYPEORM_STORAGE - database's storage url. Used only for sqlite databases. Should be a string.
+ * - TYPEORM_STORAGE - database's storage url. Used only for websql databases. Should be a string.
  * - TYPEORM_USE_POOL - indicates if connection pooling should be enabled. By default its enabled. Should be boolean-like value.
  * - TYPEORM_DRIVER_EXTRA - extra options to be passed to the driver. Should be a serialized json string of options.
  * - TYPEORM_AUTO_SCHEMA_SYNC - indicates if automatic schema synchronization will be performed on each application run. Should be boolean-like value.
@@ -134,25 +115,27 @@ export function getConnectionManager(): ConnectionManager {
  *
  * TYPEORM_DRIVER_TYPE variable is required. Depend on the driver type some other variables may be required too.
  */
-export function createConnection(): Promise<Connection>;
+// export function createConnection(): Promise<Connection>;
 
 /**
  * Creates connection from the given connection options and registers it in the manager.
  */
-export function createConnection(options?: ConnectionOptions): Promise<Connection>;
+export function createConnection(options: ConnectionOptions): Promise<Connection>{
+    return getConnectionManager().createAndConnect(options);
+};
 
 /**
  * Creates connection with the given connection name from the ormconfig.json file and registers it in the manager.
  * Optionally you can specify a path to custom ormconfig.json file.
  */
-export function createConnection(connectionNameFromConfig: string, ormConfigPath?: string): Promise<Connection>;
+// export function createConnection(connectionNameFromConfig: string, ormConfigPath?: string): Promise<Connection>;
 
 /**
  * Creates connection and and registers it in the manager.
  */
-export function createConnection(optionsOrConnectionNameFromConfig?: ConnectionOptions|string, ormConfigPath?: string): Promise<Connection> {
+/*export function createConnection(optionsOrConnectionNameFromConfig?: ConnectionOptions|string, ormConfigPath?: string): Promise<Connection> {
     return getConnectionManager().createAndConnect(optionsOrConnectionNameFromConfig as any, ormConfigPath);
-}
+}*/
 
 /**
  * Creates new connections and registers them in the manager.
@@ -164,14 +147,14 @@ export function createConnection(optionsOrConnectionNameFromConfig?: ConnectionO
  * it will try to create connection from environment variables.
  * There are several environment variables you can set:
  *
- * - TYPEORM_DRIVER_TYPE - driver type. Can be "mysql", "mysql2", "postgres", "mariadb", "sqlite", "oracle" or "mssql".
+ * - TYPEORM_DRIVER_TYPE - driver type. Can be "mysql", "mysql2", "postgres", "mariadb", "websql", "oracle" or "mssql".
  * - TYPEORM_URL - database connection url. Should be a string.
  * - TYPEORM_HOST - database host. Should be a string.
  * - TYPEORM_PORT - database access port. Should be a number.
  * - TYPEORM_USERNAME - database username. Should be a string.
  * - TYPEORM_PASSWORD - database user's password. Should be a string.
  * - TYPEORM_SID - database's SID. Used only for oracle databases. Should be a string.
- * - TYPEORM_STORAGE - database's storage url. Used only for sqlite databases. Should be a string.
+ * - TYPEORM_STORAGE - database's storage url. Used only for websql databases. Should be a string.
  * - TYPEORM_USE_POOL - indicates if connection pooling should be enabled. By default its enabled. Should be boolean-like value.
  * - TYPEORM_DRIVER_EXTRA - extra options to be passed to the driver. Should be a serialized json string of options.
  * - TYPEORM_AUTO_SCHEMA_SYNC - indicates if automatic schema synchronization will be performed on each application run. Should be boolean-like value.
@@ -217,23 +200,27 @@ export function getConnection(connectionName: string = "default"): Connection {
  * Gets entity manager from the connection.
  * If connection name wasn't specified, then "default" connection will be retrieved.
  */
+/*
+
 export function getEntityManager(connectionName: string = "default"): EntityManager {
     return getConnectionManager().get(connectionName).entityManager;
 }
+*/
 
 /**
  * Gets repository for the given entity class.
  */
-export function getRepository<Entity>(entityClass: ObjectType<Entity>, connectionName: string): Repository<Entity>;
+// export function getRepository<Entity>(entityClass: ObjectType<Entity>, connectionName: string): Repository<Entity>;
 
 /**
  * Gets repository for the given entity name.
  */
-export function getRepository<Entity>(entityName: string, connectionName: string): Repository<Entity>;
+// export function getRepository<Entity>(entityName: string, connectionName: string): Repository<Entity>;
 
 /**
  * Gets repository for the given entity class or name.
  */
+/*
 export function getRepository<Entity>(entityClassOrName: ObjectType<Entity>|string, connectionName: string = "default"): Repository<Entity> {
     return getConnectionManager().get(connectionName).getRepository<Entity>(entityClassOrName as any);
-}
+}*/
