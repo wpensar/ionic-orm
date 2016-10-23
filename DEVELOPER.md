@@ -1,6 +1,11 @@
-# Building and Testing TypeORM
+# Building and Testing Ionic-ORM
 
-This document describes how to set up your development environment and run TypeORM test cases.
+## Please remember to constribute and fork [TypeORM](https://github.com/typeorm/typeorm) for any issues that are not in the WebSQL and SQLite driver; once accepted over there, Ionic-ORM will pull the changes.
+
+The Reason why Ionic-ORM has to be seperate is because TypeORM is a module that is primary meant to be ran on a server side application and not a client; we are taking advantage of their amazing SQL builder and ORM abilities done in typescript.
+
+
+This document describes how to set up your development environment and run Ionic-ORM test cases.
 
 * [Prerequisite Software](#prerequisite-software)
 * [Getting the Sources](#getting-the-sources)
@@ -21,13 +26,9 @@ following products on your development machine:
   Git](https://help.github.com/articles/set-up-git) is a good source of information.
 
 * [Node.js](http://nodejs.org), (better to install latest version) which is used to run a development web server,
-  run tests, and generate distributable files. 
+  run tests, and generate distributable files.
   Depending on your system, you can install Node either from source or as a pre-packaged bundle.
-* [Mysql](https://www.mysql.com/) is required to run tests on this platform
-* [MariaDB](https://mariadb.com/) is required to run tests on this platform
-* [Postgres](https://www.postgresql.org/) is required to run tests on this platform
-* [Oracle](https://www.oracle.com/database/index.html) is required to run tests on this platform
-* [Microsoft SQL Server](https://www.microsoft.com/en-us/cloud-platform/sql-server) is required to run tests on this platform
+
 
 ## Getting the Sources
 
@@ -56,40 +57,25 @@ Install all TypeORM dependencies by running this command:
 npm install
 ```
 
-During installation you may have some probelems with some dependencies. 
+During installation you may have some probelems with some dependencies.
 For example to proper install oracle driver you need to follow all instructions from
  [node-oracle documentation](https://github.com/oracle/node-oracledb).
 
-Also install these packages globally:
+Also install typescript globally:
 
-* `npm install -g gulp` (you might need to prefix this command with `sudo`)
 * `npm install -g typescript` (you might need to prefix this command with `sudo`)
 
 ## Building
 
-To build a distribution package of TypeORM run:
+To build a distribution package of Ionic-ORM run:
 
 ```shell
-gulp package
+tsc
 ```
 
-This command will generate you a distribution package in the `build/package` directory.
+This command will generate you a distribution package in the `dist/` directory.
 You can link (or simply copy/paste) this directory into your project and test TypeORM there
 (but make sure to keep all node_modules required by TypeORM).
-
-## Running Tests Locally
-
-Setup your environment configuration by copying `ormconfig.json.dist` into `ormconfig.json` and 
-replacing parameters with your own.
-
-Then run tests:
-
-```shell
-gulp tests
-```
-
-You should execute test suites before submitting a PR to github.
-All the tests are executed on our Continuous Integration infrastructure and a PR could only be merged once the tests pass.
 
 
 
