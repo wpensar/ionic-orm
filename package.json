@@ -27,8 +27,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.37",
     "lodash": "^4.16.4",
-    "moment": "^2.15.1",
-    "reflect-metadata": "^0.1.8"
+    "moment": "^2.15.1"
   },
   "homepage": "https://github.com/BradyLiles/ionic-orm#readme",
   "main": "dist/index.js",

@@ -4,6 +4,8 @@
 
 > Ionic-ORM is a near direct fork of [TypeORM](2)
 
+> To find an example of the implementation of Ionic-ORM please refer to the [test project](https://github.com/BradyLiles/ionic-orm-test)
+
 > Please support a project by simply putting a github star.
 Share this library with friends on twitter and everywhere else you can.
 
