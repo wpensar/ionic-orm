@@ -1,5 +1,4 @@
-/*
-import * as path from "path";
+/*import * as path from "path";
 
 /!**
  * Loads all exported classes from the given directory.
@@ -29,7 +28,7 @@ export function importClassesFromDirectories(directories: string[], formats = ["
             const dtsExtension = file.substring(file.length - 5, file.length);
             return formats.indexOf(path.extname(file)) !== -1 && dtsExtension !== ".d.ts";
         })
-        .map(file => require(file));
+        .map(file => require(path.resolve(file)));
 
     return loadFileClasses(dirs, []);
 }
@@ -42,5 +41,5 @@ export function importJsonsFromDirectories(directories: string[], format = ".jso
 
     return allFiles
         .filter(file => path.extname(file) === format)
-        .map(file => require(file));
+        .map(file => require(path.resolve(file)));
 }*/
