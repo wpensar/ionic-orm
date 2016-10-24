@@ -171,7 +171,7 @@ export class WebSqlQueryRunner implements QueryRunner {
                 transaction.executeSql(sql, parameters,
                 function( transaction, result ) {
                     if (generatedColumn)
-                        return ok(result);
+                        return ok(result["insertId"]);
                         //return ok(this["lastID"]);
 
                     ok();

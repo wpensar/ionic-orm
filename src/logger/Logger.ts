@@ -21,7 +21,7 @@ export class Logger {
      */
     logQuery(query: string, parameters?: any[]) {
         if (this.options.logQueries /*|| process.env.LOGGER_CLI_SCHEMA_SYNC*/)
-            this.log("log", `executing query: ${query}${parameters && parameters.length ? " -- PARAMETERS: " + JSON.stringify(parameters) : ""}`);
+            this.log("info", `executing query: ${query}${parameters && parameters.length ? " -- PARAMETERS: " + JSON.stringify(parameters) : ""}`);
     }
 
     /**
