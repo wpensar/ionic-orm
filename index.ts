@@ -34,7 +34,6 @@ export * from "./src/decorator/options/JoinColumnOptions";
 export * from "./src/decorator/options/JoinTableOptions";
 export * from "./src/decorator/options/RelationOptions";
 export * from "./src/decorator/options/TableOptions";
-export * from "./src/decorator/relations/RelationCount";
 export * from "./src/decorator/relations/JoinColumn";
 export * from "./src/decorator/relations/JoinTable";
 export * from "./src/decorator/relations/ManyToMany";
