@@ -6,7 +6,7 @@ import {Category} from "./entity/Category";
 
 /**
  * Because lazy relations are overriding prototype is impossible to run these tests on multiple connections.
- * So we run tests only for mysql.
+ * So we run tests only for sqlite.
  */
 describe("lazy-relations", () => {
 
@@ -27,7 +27,7 @@ describe("lazy-relations", () => {
         entitySchemas: [userSchema, profileSchema],
         schemaCreate: true,
         dropSchemaOnConnection: true,
-        enabledDrivers: ["mysql"] // we can properly test lazy-relations only on one platform
+        enabledDrivers: ["sqlite"] // we can properly test lazy-relations only on one platform
     }));
     beforeEach(() => reloadTestingDatabases(connections));
     after(() => closeTestingConnections(connections));

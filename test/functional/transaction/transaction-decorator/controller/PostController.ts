@@ -6,7 +6,7 @@ import {Category} from "../entity/Category";
 
 export class PostController {
 
-    @Transaction("mysql") // "mysql" is a connection name. you can not pass it if you are using default connection.
+    @Transaction("sqlite") // "mysql" is a connection name. you can not pass it if you are using default connection.
     async save(post: Post, category: Category, @TransactionEntityManager() entityManager: EntityManager) {
         await entityManager.persist(post);
         await entityManager.persist(category);

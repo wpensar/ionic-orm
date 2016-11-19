@@ -11,7 +11,6 @@ import {Repository} from "./repository/Repository";
 import {EntityManager} from "./entity-manager/EntityManager";
 import {PlatformTools} from "./platform/PlatformTools";
 import {TreeRepository} from "./repository/TreeRepository";
-import {MongoRepository} from "./repository/MongoRepository";
 
 // -----------------------------------------------------------------   --------
 // Commonly Used exports
@@ -83,14 +82,12 @@ export {Driver} from "./driver/Driver";
 export {QueryBuilder} from "./query-builder/QueryBuilder";
 export {QueryRunner} from "./query-runner/QueryRunner";
 export {EntityManager} from "./entity-manager/EntityManager";
-export {MongoEntityManager} from "./entity-manager/MongoEntityManager";
 export {MigrationInterface} from "./migration/MigrationInterface";
 export {DefaultNamingStrategy} from "./naming-strategy/DefaultNamingStrategy";
 export {NamingStrategyInterface} from "./naming-strategy/NamingStrategyInterface";
 export {Repository} from "./repository/Repository";
 export {TreeRepository} from "./repository/TreeRepository";
 export {SpecificRepository} from "./repository/SpecificRepository";
-export {MongoRepository} from "./repository/MongoRepository";
 export {FindManyOptions} from "./find-options/FindManyOptions";
 export {InsertEvent} from "./subscriber/event/InsertEvent";
 export {UpdateEvent} from "./subscriber/event/UpdateEvent";
@@ -144,7 +141,7 @@ export function getConnectionManager(): ConnectionManager {
  * it will try to create connection from environment variables.
  * There are several environment variables you can set:
  *
- * - TYPEORM_DRIVER_TYPE - driver type. Can be "mysql", "postgres", "mariadb", "sqlite", "oracle" or "mssql".
+ * - TYPEORM_DRIVER_TYPE - driver type. Can be "sqlite", "websql".
  * - TYPEORM_URL - database connection url. Should be a string.
  * - TYPEORM_HOST - database host. Should be a string.
  * - TYPEORM_PORT - database access port. Should be a number.
@@ -195,7 +192,7 @@ export function createConnection(optionsOrConnectionNameFromConfig?: ConnectionO
  * it will try to create connection from environment variables.
  * There are several environment variables you can set:
  *
- * - TYPEORM_DRIVER_TYPE - driver type. Can be "mysql", "postgres", "mariadb", "sqlite", "oracle" or "mssql".
+ * - TYPEORM_DRIVER_TYPE - driver type. Can be "sqlite", "websql".
  * - TYPEORM_URL - database connection url. Should be a string.
  * - TYPEORM_HOST - database host. Should be a string.
  * - TYPEORM_PORT - database access port. Should be a number.
@@ -286,19 +283,3 @@ export function getTreeRepository<Entity>(entityClassOrName: ObjectType<Entity>|
     return getConnectionManager().get(connectionName).getTreeRepository<Entity>(entityClassOrName as any);
 }
 
-/**
- * Gets mongodb repository for the given entity class.
- */
-export function getMongoRepository<Entity>(entityClass: ObjectType<Entity>, connectionName?: string): MongoRepository<Entity>;
-
-/**
- * Gets mongodb repository for the given entity name.
- */
-export function getMongoRepository<Entity>(entityName: string, connectionName?: string): MongoRepository<Entity>;
-
-/**
- * Gets mongodb repository for the given entity class or name.
- */
-export function getMongoRepository<Entity>(entityClassOrName: ObjectType<Entity>|string, connectionName: string = "default"): MongoRepository<Entity> {
-    return getConnectionManager().get(connectionName).getMongoRepository<Entity>(entityClassOrName as any);
-}

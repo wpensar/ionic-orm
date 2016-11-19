@@ -36,9 +36,6 @@ import {AbstractRepository} from "../repository/AbstractRepository";
 import {CustomRepositoryNotFoundError} from "../repository/error/CustomRepositoryNotFoundError";
 import {CustomRepositoryReusedError} from "../repository/error/CustomRepositoryReusedError";
 import {CustomRepositoryCannotInheritRepositoryError} from "../repository/error/CustomRepositoryCannotInheritRepositoryError";
-import {MongoRepository} from "../repository/MongoRepository";
-import {MongoDriver} from "../driver/mongodb/MongoDriver";
-import {MongoEntityManager} from "../entity-manager/MongoEntityManager";
 
 /**
  * Connection is a single database connection to a specific database of a database management system.
@@ -172,16 +169,6 @@ export class Connection {
         return this._entityManager;
     }
 
-    /**
-     * Gets the mongodb entity manager that allows to perform mongodb-specific repository operations
-     * with any entity in this connection.
-     */
-    get mongoEntityManager(): MongoEntityManager {
-        if (!(this._entityManager instanceof MongoEntityManager))
-            throw new Error(`MongoEntityManager is only available for MongoDB databases.`);
-
-        return this._entityManager as MongoEntityManager;
-    }
 
     // -------------------------------------------------------------------------
     // Public Methods
@@ -249,12 +236,9 @@ export class Connection {
         if (dropBeforeSync)
             await this.dropDatabase();
 
-        if (this.driver instanceof MongoDriver) { // todo: temporary
-            await this.driver.syncSchema(this.entityMetadatas);
 
-        } else {
-            await this.createSchemaBuilder().build();
-        }
+        await this.createSchemaBuilder().build();
+
     }
 
     /**
@@ -482,31 +466,6 @@ export class Connection {
             throw new RepositoryNotTreeError(entityClassOrName);
 
         return repository;
-    }
-
-    /**
-     * Gets mongodb-specific repository for the given entity class.
-     */
-    getMongoRepository<Entity>(entityClass: ObjectType<Entity>): MongoRepository<Entity>;
-
-    /**
-     * Gets mongodb-specific repository for the given entity name.
-     */
-    getMongoRepository<Entity>(entityName: string): MongoRepository<Entity>;
-
-    /**
-     * Gets mongodb-specific repository for the given entity name.
-     */
-    getMongoRepository<Entity>(entityClassOrName: ObjectType<Entity>|string): MongoRepository<Entity>;
-
-    /**
-     * Gets mongodb-specific repository for the given entity class or name.
-     */
-    getMongoRepository<Entity>(entityClassOrName: ObjectType<Entity>|string): MongoRepository<Entity> {
-        if (!(this.driver instanceof MongoDriver))
-            throw new Error(`You can use getMongoRepository only for MongoDB connections.`);
-
-        return this.findRepositoryAggregator(entityClassOrName).repository as MongoRepository<Entity>;
     }
 
     /**
@@ -745,9 +704,6 @@ export class Connection {
      * Creates a new default entity manager without single connection setup.
      */
     protected createEntityManager() {
-        if (this.driver instanceof MongoDriver)
-            return new MongoEntityManager(this);
-
         return new EntityManager(this);
     }
 

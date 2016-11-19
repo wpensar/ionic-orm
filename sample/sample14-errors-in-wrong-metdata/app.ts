@@ -5,12 +5,8 @@ import {PostAuthor} from "./entity/PostAuthor";
 
 const options: ConnectionOptions = {
     driver: {
-        type: "mysql",
-        host: "localhost",
-        port: 3306,
-        username: "root",
-        password: "admin",
-        database: "test"
+        type: "sqlite",
+        storage: "temp/sqlitedb.db"
     },
     autoSchemaSync: true,
     entities: [Post, PostAuthor]

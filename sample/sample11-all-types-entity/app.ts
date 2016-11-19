@@ -4,12 +4,8 @@ import {EverythingEntity} from "./entity/EverythingEntity";
 
 const options: ConnectionOptions = {
     driver: {
-        type: "mysql",
-        host: "localhost",
-        port: 3306,
-        username: "root",
-        password: "admin",
-        database: "test"
+        type: "sqlite",
+        storage: "temp/sqlitedb.db"
     },
     logging: {
         logOnlyFailedQueries: true

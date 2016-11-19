@@ -10,7 +10,6 @@ import {RepositoryNotTreeError} from "../connection/error/RepositoryNotTreeError
 import {NoNeedToReleaseEntityManagerError} from "./error/NoNeedToReleaseEntityManagerError";
 import {QueryRunnerProviderAlreadyReleasedError} from "../query-runner/error/QueryRunnerProviderAlreadyReleasedError";
 import {SpecificRepository} from "../repository/SpecificRepository";
-import {MongoRepository} from "../repository/MongoRepository";
 import {DeepPartial} from "../common/DeepPartial";
 
 /**
@@ -109,28 +108,6 @@ export abstract class BaseEntityManager {
         }
 
         return this.connection.getTreeRepository<Entity>(entityClassOrName as any);
-    }
-
-    /**
-     * Gets mongodb repository for the given entity class.
-     */
-    getMongoRepository<Entity>(entityClass: ObjectType<Entity>): MongoRepository<Entity>;
-
-    /**
-     * Gets mongodb repository for the given entity name.
-     */
-    getMongoRepository<Entity>(entityName: string): MongoRepository<Entity>;
-
-    /**
-     * Gets mongodb repository for the given entity class or name.
-     */
-    getMongoRepository<Entity>(entityClassOrName: ObjectType<Entity>|string): MongoRepository<Entity> {
-
-        // if single db connection is used then create its own repository with reused query runner
-        if (this.queryRunnerProvider)
-            return this.obtainRepositoryAggregator(entityClassOrName as any).repository as MongoRepository<Entity>;
-
-        return this.connection.getMongoRepository<Entity>(entityClassOrName as any);
     }
 
     /**

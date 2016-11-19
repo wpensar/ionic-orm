@@ -21,7 +21,7 @@ describe("many-to-one", function() {
     // connect to db
     let connection: Connection;
     before(async function() {
-        connection = await createConnection(setupSingleTestingConnection("mysql", {
+        connection = await createConnection(setupSingleTestingConnection("sqlite", {
             entities: [Post, PostDetails, PostCategory, PostMetadata, PostImage, PostInformation, PostAuthor],
         }));
     });

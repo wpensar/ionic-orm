@@ -19,7 +19,7 @@ describe("many-to-many", function() {
     // connect to db
     let connection: Connection;
     before(async function() {
-        connection = await createConnection(setupSingleTestingConnection("mysql", {
+        connection = await createConnection(setupSingleTestingConnection("sqlite", {
             entities: [__dirname + "/../../sample/sample4-many-to-many/entity/*"],
         }));
     });

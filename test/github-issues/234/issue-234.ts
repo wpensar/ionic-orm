@@ -13,7 +13,7 @@ describe("github issues > #234 and #223 lazy loading does not work correctly fro
         entities: [__dirname + "/entity/*{.js,.ts}"],
         schemaCreate: true,
         dropSchemaOnConnection: true,
-        enabledDrivers: ["mysql"] // we can properly test lazy-relations only on one platform
+        enabledDrivers: ["sqlite"] // we can properly test lazy-relations only on one platform
     }));
     beforeEach(() => reloadTestingDatabases(connections));
     after(() => closeTestingConnections(connections));

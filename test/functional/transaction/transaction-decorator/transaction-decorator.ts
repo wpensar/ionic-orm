@@ -13,7 +13,7 @@ describe("transaction > method wrapped into transaction decorator", () => {
         entities: [__dirname + "/entity/*{.js,.ts}"],
         schemaCreate: true,
         dropSchemaOnConnection: true,
-        enabledDrivers: ["mysql"] // since @Transaction accepts a specific connection name we can use only one connection and its name
+        enabledDrivers: ["sqlite"] // since @Transaction accepts a specific connection name we can use only one connection and its name
     }));
     beforeEach(() => reloadTestingDatabases(connections));
     after(() => closeTestingConnections(connections));

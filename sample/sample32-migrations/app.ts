@@ -6,12 +6,8 @@ import {MigrationExecutor} from "../../src/migration/MigrationExecutor";
 
 const options: ConnectionOptions = {
     driver: {
-        type: "mysql",
-        host: "localhost",
-        port: 3306,
-        username: "root",
-        password: "admin",
-        database: "test"
+        type: "sqlite",
+        storage: "temp/sqlitedb.db"
     },
     autoSchemaSync: true,
     logging: {
@@ -41,14 +37,10 @@ createConnection(options).then(async connection => {
 
     // now create a new connection
     connection = await createConnection({
-        name: "mysql",
+        name: "sqlite",
         driver: {
-            type: "mysql",
-            host: "localhost",
-            port: 3306,
-            username: "test",
-            password: "test",
-            database: "test"
+            type: "sqlite",
+            storage: "temp/sqlitedb.db"
         },
         logging: {
             logQueries: true

@@ -7,7 +7,6 @@ import {OrmUtils} from "../util/OrmUtils";
 import {QueryRunnerProvider} from "../query-runner/QueryRunnerProvider";
 import {EntityManager} from "../entity-manager/EntityManager";
 import {PromiseUtils} from "../util/PromiseUtils";
-import {MongoDriver} from "../driver/mongodb/MongoDriver";
 import {EmbeddedMetadata} from "../metadata/EmbeddedMetadata";
 
 /**
@@ -605,12 +604,9 @@ export class SubjectOperationExecutor {
             columnValues.push(parentIdColumnValue || entity[metadata.parentEntityMetadata.firstPrimaryColumn.propertyName]); // todo: should be array of primary keys
         }
 
-        if (this.connection.driver instanceof MongoDriver) { // todo: make better abstraction
-            return columnsAndValuesMap;
 
-        } else {
-            return OrmUtils.zipObject(columnNames, columnValues);
-        }
+        return OrmUtils.zipObject(columnNames, columnValues);
+
     }
 
     // -------------------------------------------------------------------------
@@ -700,57 +696,6 @@ export class SubjectOperationExecutor {
      */
     private async update(subject: Subject): Promise<void> {
         const entity = subject.entity;
-
-        if (this.connection.driver instanceof MongoDriver) {
-            const idMap = subject.metadata.getDatabaseEntityIdMap(entity);
-            if (!idMap)
-                throw new Error(`Internal error. Cannot get id of the updating entity.`);
-
-
-            const addEmbeddedValuesRecursively = (entity: any, value: any, embeddeds: EmbeddedMetadata[]) => {
-                embeddeds.forEach(embedded => {
-                    if (!entity[embedded.propertyName])
-                        return;
-                    if (embedded.isArray) {
-                        value[embedded.prefix] = (entity[embedded.propertyName] as any[]).map(subValue => {
-                            const newItem: ObjectLiteral = {};
-                            embedded.columns.forEach(column => {
-                                newItem[column.name] = subValue[column.propertyName];
-                            });
-                            return newItem;
-                        });
-
-                    } else {
-                        embedded.columns.forEach(column => {
-                            if (!value[embedded.prefix])
-                                value[embedded.prefix] = {};
-
-                            value[embedded.prefix][column.name] = entity[embedded.propertyName][column.propertyName];
-                        });
-                    }
-                    addEmbeddedValuesRecursively(entity[embedded.propertyName], value[embedded.prefix], embedded.embeddeds);
-                });
-            };
-
-            const value: ObjectLiteral = {};
-            subject.metadata.columnsWithoutEmbeddeds.forEach(column => {
-                if (entity[column.propertyName] !== undefined)
-                    value[column.fullName] = entity[column.propertyName];
-            });
-            addEmbeddedValuesRecursively(entity, value, subject.metadata.embeddeds);
-
-            // if number of updated columns = 0 no need to update updated date and version columns
-            if (Object.keys(value).length === 0)
-                return;
-
-            if (subject.metadata.hasUpdateDateColumn)
-                value[subject.metadata.updateDateColumn.fullName] = this.connection.driver.preparePersistentValue(new Date(), subject.metadata.updateDateColumn);
-
-            if (subject.metadata.hasVersionColumn)
-                value[subject.metadata.versionColumn.fullName] = this.connection.driver.preparePersistentValue(entity[subject.metadata.versionColumn.propertyName] + 1, subject.metadata.versionColumn);
-
-            return this.queryRunner.update(subject.metadata.table.name, value, idMap);
-        }
 
         // we group by table name, because metadata can have different table names
         const valueMaps: { tableName: string, metadata: EntityMetadata, values: ObjectLiteral }[] = [];

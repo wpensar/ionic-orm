@@ -12,7 +12,7 @@ describe("github issues > #182 enums are not saved properly", () => {
         entities: [__dirname + "/entity/*{.js,.ts}"],
         schemaCreate: true,
         dropSchemaOnConnection: true,
-        enabledDrivers: ["mysql"] // we can properly test lazy-relations only on one platform
+        enabledDrivers: ["sqlite"] // we can properly test lazy-relations only on one platform
     }));
     beforeEach(() => reloadTestingDatabases(connections));
     after(() => closeTestingConnections(connections));

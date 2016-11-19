@@ -10,7 +10,6 @@ import {Category} from "./entity/Category";
 import {createTestingConnections, closeTestingConnections, setupSingleTestingConnection} from "../../utils/test-utils";
 import {createConnection} from "../../../src/index";
 import {Connection} from "../../../src/connection/Connection";
-import {PostgresDriver} from "../../../src/driver/postgres/PostgresDriver";
 import {Repository} from "../../../src/repository/Repository";
 import {TreeRepository} from "../../../src/repository/TreeRepository";
 import {getConnectionManager} from "../../../src/index";
@@ -31,7 +30,7 @@ describe("Connection", () => {
 
         let connection: Connection;
         before(async () => {
-            connection = getConnectionManager().create(setupSingleTestingConnection("mysql", {
+            connection = getConnectionManager().create(setupSingleTestingConnection("sqlite", {
                 name: "default",
                 entities: []
             }));
@@ -93,7 +92,7 @@ describe("Connection", () => {
             expect(() => {
                 connection = getConnectionManager().create(<ConnectionOptions>{
                     driver: {
-                        "type": "mysql",
+                        "type": "sqlite",
                         "username": "test",
                         "password": "test",
                         "database": "test",
@@ -102,7 +101,7 @@ describe("Connection", () => {
                     entitySchemas: [],
                     dropSchemaOnConnection: false,
                     schemaCreate: false,
-                    enabledDrivers: ["mysql"],
+                    enabledDrivers: ["sqlite"],
                 });
             }).to.throw(Error);
         });
@@ -234,11 +233,11 @@ describe("Connection", () => {
 
         let firstConnection: Connection, secondConnection: Connection;
         beforeEach(async () => {
-            firstConnection = getConnectionManager().create(setupSingleTestingConnection("mysql", {
+            firstConnection = getConnectionManager().create(setupSingleTestingConnection("sqlite", {
                 name: "firstConnection",
                 entities: []
             }));
-            secondConnection = getConnectionManager().create(setupSingleTestingConnection("mysql", {
+            secondConnection = getConnectionManager().create(setupSingleTestingConnection("sqlite", {
                 name: "secondConnection",
                 entities: []
             }));
@@ -286,7 +285,7 @@ describe("Connection", () => {
 
         let connection: Connection;
         beforeEach(async () => {
-            connection = getConnectionManager().create(setupSingleTestingConnection("mysql", {
+            connection = getConnectionManager().create(setupSingleTestingConnection("sqlite", {
                 name: "default",
                 entities: []
             }));
@@ -334,7 +333,7 @@ describe("Connection", () => {
 
         let connection: Connection;
         beforeEach(async () => {
-            connection = getConnectionManager().create(setupSingleTestingConnection("mysql", {
+            connection = getConnectionManager().create(setupSingleTestingConnection("sqlite", {
                 name: "default",
                 entities: []
             }));
@@ -393,14 +392,14 @@ describe("Connection", () => {
         beforeEach(async () => {
             const [connection1] = await createTestingConnections({
                 name: "test",
-                enabledDrivers: ["postgres"],
+                enabledDrivers: ["sqlite"],
                 entities: [CommentV1, GuestV1],
                 schemaName: "test-schema",
                 dropSchemaOnConnection: true,
             });
             const [connection2] = await createTestingConnections({
                 name: "another",
-                enabledDrivers: ["postgres"],
+                enabledDrivers: ["sqlite"],
                 entities: [CommentV1, GuestV1],
                 schemaName: "another-schema",
                 dropSchemaOnConnection: true
@@ -413,7 +412,7 @@ describe("Connection", () => {
             await closeTestingConnections(connections);
             const [connection1] = await createTestingConnections({
                 name: "test",
-                enabledDrivers: ["postgres"],
+                enabledDrivers: ["sqlite"],
                 entities: [CommentV2, GuestV2],
                 schemaName: "test-schema",
                 dropSchemaOnConnection: false,
@@ -421,7 +420,7 @@ describe("Connection", () => {
             });
             const [connection2] = await createTestingConnections({
                 name: "another",
-                enabledDrivers: ["postgres"],
+                enabledDrivers: ["sqlite"],
                 entities: [CommentV2, GuestV2],
                 schemaName: "another-schema",
                 dropSchemaOnConnection: false,
@@ -431,45 +430,5 @@ describe("Connection", () => {
         });
     });
 
-    describe("Can change postgres default schema name", () => {
-        let connections: Connection[];
-        beforeEach(async () => {
-            const [connection1] = await createTestingConnections({
-                name: "test",
-                enabledDrivers: ["postgres"],
-                entities: [CommentV1, GuestV1],
-                schemaName: "test-schema",
-                dropSchemaOnConnection: true,
-            });
-            const [connection2] = await createTestingConnections({
-                name: "another",
-                enabledDrivers: ["postgres"],
-                entities: [CommentV1, GuestV1],
-                schemaName: "another-schema",
-                dropSchemaOnConnection: true
-            });
-            connections = [connection1, connection2];
-        });
-        afterEach(() => closeTestingConnections(connections));        
-
-        it("schema name can be set", () => {
-            return Promise.all(connections.map(async connection => {
-                await connection.syncSchema(true);
-                const schemaName = (connection.driver as PostgresDriver).schemaName;
-                const comment = new CommentV1();
-                comment.title = "Change SchemaName";
-                comment.context = `To ${schemaName}`;
-
-                const commentRepo = connection.getRepository(CommentV1);
-                await commentRepo.persist(comment);
-
-                const query = await connection.driver.createQueryRunner();
-                const rows = await query.query(`select * from "${schemaName}"."comment" where id = $1`, [comment.id]);
-                expect(rows[0]["context"]).to.be.eq(comment.context);
-            }));
-            
-        });
-
-    });
 
 });

@@ -1,4 +1,4 @@
-import moment from "moment";
+const win: any = window;
 
 import {Driver} from "../Driver";
 import {ConnectionIsNotSetError} from "../error/ConnectionIsNotSetError";
@@ -6,27 +6,23 @@ import {DriverOptions} from "../DriverOptions";
 import {ObjectLiteral} from "../../common/ObjectLiteral";
 import {DatabaseConnection} from "../DatabaseConnection";
 import {DriverPackageNotInstalledError} from "../error/DriverPackageNotInstalledError";
+import {DriverPackageLoadError} from "../error/DriverPackageLoadError";
 import {ColumnTypes, ColumnType} from "../../metadata/types/ColumnTypes";
 import {ColumnMetadata} from "../../metadata/ColumnMetadata";
 import {Logger} from "../../logger/Logger";
-import {SqliteQueryRunner} from "./SqliteQueryRunner";
+import moment from 'moment';
+import { IonicSQLiteQueryRunner } from "./IonicSQLiteQueryRunner";
 import {QueryRunner} from "../../query-runner/QueryRunner";
 import {DriverOptionNotSetError} from "../error/DriverOptionNotSetError";
-import {NamingStrategyInterface} from "../../naming-strategy/NamingStrategyInterface";
 
 /**
- * Organizes communication with sqlite DBMS.
+ * Organizes communication with ionic-sqlite DBMS.
  */
-export class SqliteDriver implements Driver {
+export class IonicSQLiteDriver implements Driver {
 
     // -------------------------------------------------------------------------
     // Public Properties
     // -------------------------------------------------------------------------
-
-    /**
-     * Naming strategy used in the connection where this driver is used.
-     */
-    namingStrategy: NamingStrategyInterface;
 
     /**
      * Driver connection options.
@@ -48,7 +44,7 @@ export class SqliteDriver implements Driver {
     protected databaseConnection: DatabaseConnection|undefined;
 
     /**
-     * Logger used to log queries and errors.
+     * Logger used go log queries and errors.
      */
     protected logger: Logger;
 
@@ -80,21 +76,16 @@ export class SqliteDriver implements Driver {
      */
     connect(): Promise<void> {
         return new Promise<void>((ok, fail) => {
-            const connection = (<any>window).openDatabase(this.options.database, "1.0", this.options.database, 5 * 1024 * 1024);
-            if (!connection)
+            const connection = win.openDatabase(this.options.database, '1.0', this.options.database, 5 * 1024 * 1024);
+            if(!connection)
                 return fail();
 
-            this.databaseConnection = {
-                id: 1,
-                connection: connection,
-                isTransactionActive: false
-            };
-
-            // we need to enable foreign keys in sqlite to make sure all foreign key related features
-            // working properly. this also makes onDelete to work with sqlite.
-            connection.run(`PRAGMA foreign_keys = ON;`, (err: any, result: any) => {
+                this.databaseConnection = {
+                    id: 1,
+                    connection: connection,
+                    isTransactionActive: false
+                };
                 ok();
-            });
         });
     }
 
@@ -106,7 +97,7 @@ export class SqliteDriver implements Driver {
             const handler = (err: any) => err ? fail(err) : ok();
 
             if (!this.databaseConnection)
-                return fail(new ConnectionIsNotSetError("sqlite"));
+                return fail(new ConnectionIsNotSetError("ionic-sqlite"));
             this.databaseConnection.connection.close(handler);
         });
     }
@@ -116,10 +107,10 @@ export class SqliteDriver implements Driver {
      */
     async createQueryRunner(): Promise<QueryRunner> {
         if (!this.databaseConnection)
-            return Promise.reject(new ConnectionIsNotSetError("sqlite"));
+            return Promise.reject(new ConnectionIsNotSetError("ionic-sqlite"));
 
         const databaseConnection = await this.retrieveDatabaseConnection();
-        return new SqliteQueryRunner(databaseConnection, this, this.logger);
+        return new IonicSQLiteQueryRunner(databaseConnection, this, this.logger);
     }
 
     /**
@@ -135,11 +126,8 @@ export class SqliteDriver implements Driver {
     /**
      * Prepares given value to a value to be persisted, based on its column type and metadata.
      */
-    preparePersistentValue(value: any, columnMetadata: ColumnMetadata): any {
-        if (value === null || value === undefined)
-            return null;
-
-        switch (columnMetadata.type) {
+    preparePersistentValue(value: any, column: ColumnMetadata): any {
+        switch (column.type) {
             case ColumnTypes.BOOLEAN:
                 return value === true ? 1 : 0;
 
@@ -160,6 +148,16 @@ export class SqliteDriver implements Driver {
 
         return value;
     }
+
+    /**
+     * Prepares given value to a value to be persisted, based on its column metadata.
+     */
+    prepareHydratedValue(value: any, type: ColumnType): any;
+
+    /**
+     * Prepares given value to a value to be persisted, based on its column type.
+     */
+    prepareHydratedValue(value: any, column: ColumnMetadata): any;
 
     /**
      * Prepares given value to a value to be persisted, based on its column type or metadata.
@@ -205,18 +203,18 @@ export class SqliteDriver implements Driver {
 
         const builtParameters: any[] = [];
         const keys = Object.keys(parameters).map(parameter => "(:" + parameter + "\\b)").join("|");
-        sql = sql.replace(new RegExp(keys, "g"), (key: string): string => {
+        sql = sql.replace(new RegExp(keys, "g"), (key: string): string  => {
             const value = parameters[key.substr(1)];
             if (value instanceof Array) {
                 return value.map((v: any) => {
 
                     builtParameters.push(this.prepareParameter(v));
-                    return "?"; // + builtParameters.length;
+                    return "?";// + builtParameters.length;
                 }).join(", ");
             } else {
                 builtParameters.push(this.prepareParameter(value));
             }
-            return "?"; // + builtParameters.length;
+            return "?";// + builtParameters.length;
         }); // todo: make replace only in value statements, otherwise problems
         return [sql, builtParameters];
     }
@@ -225,9 +223,9 @@ export class SqliteDriver implements Driver {
     /**
      * Prepares given parameter
      */
-    prepareParameter(param: any) {
+    prepareParameter( param: any ){
 
-        switch (typeof(param)) {
+        switch ( typeof(param) ) {
             case "boolean":
                 return param === true ? 1 : 0;
             default:
@@ -269,17 +267,19 @@ export class SqliteDriver implements Driver {
         if (this.databaseConnection)
             return Promise.resolve(this.databaseConnection);
 
-        throw new ConnectionIsNotSetError("sqlite");
+        throw new ConnectionIsNotSetError("ionic-sqlite");
     }
 
     /**
      * If driver dependency is not given explicitly, then try to load it via "require".
      */
     protected loadDependencies(): void {
+        // if (!require)
+        //     throw new DriverPackageLoadError();
 
-        if (!(<any>window).openDatabase) {
-            throw new DriverPackageNotInstalledError("IonicSQLite", "ionic-sqlite");
-        }
+            if(!win.openDatabase) {
+                throw new DriverPackageNotInstalledError("IonicSQLite", "ionic-sqlite");
+            }
     }
 
 }

@@ -184,7 +184,7 @@ export function reloadTestingDatabases(connections: Connection[]) {
  */
 export function setupConnection(callback: (connection: Connection) => any, entities: Function[]) {
     return function() {
-        return createConnection(setupSingleTestingConnection("mysql", { entities: entities }))
+        return createConnection(setupSingleTestingConnection("sqlite", { entities: entities }))
             .then(connection => {
                 if (callback)
                     callback(connection);

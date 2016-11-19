@@ -1,7 +1,7 @@
 /**
  * Driver type.
  */
-export type DriverType = "mysql"|"postgres"|"mariadb"|"sqlite"|"oracle"|"mssql"|"websql"|"mongodb";
+export type DriverType = "websql"|"sqlite";
 
 /**
  * Connectivity options used to connect to the database, and other database-driver-specific options.
@@ -47,7 +47,7 @@ export interface DriverOptions {
      * Schema name. By default is "public" (used only in Postgres databases).
      */
     readonly schemaName?: string;
-    
+
     /**
      * Connection SID (used for Oracle databases).
      */

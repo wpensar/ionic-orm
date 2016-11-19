@@ -4,7 +4,6 @@ import {RawSqlResultsToEntityTransformer} from "./transformer/RawSqlResultsToEnt
 import {EntityMetadata} from "../metadata/EntityMetadata";
 import {ObjectLiteral} from "../common/ObjectLiteral";
 import {QueryRunner} from "../query-runner/QueryRunner";
-import {SqlServerDriver} from "../driver/sqlserver/SqlServerDriver";
 import {OrderByCondition} from "../find-options/OrderByCondition";
 import {Connection} from "../connection/Connection";
 import {JoinOptions} from "./JoinOptions";
@@ -13,8 +12,6 @@ import {PessimisticLockTransactionRequiredError} from "./error/PessimisticLockTr
 import {NoVersionOrUpdateDateColumnError} from "./error/NoVersionOrUpdateDateColumnError";
 import {OptimisticLockVersionMismatchError} from "./error/OptimisticLockVersionMismatchError";
 import {OptimisticLockCanNotBeUsedError} from "./error/OptimisticLockCanNotBeUsedError";
-import {PostgresDriver} from "../driver/postgres/PostgresDriver";
-import {MysqlDriver} from "../driver/mysql/MysqlDriver";
 import {LockNotSupportedOnGivenDriverError} from "./error/LockNotSupportedOnGivenDriverError";
 import {ColumnMetadata} from "../metadata/ColumnMetadata";
 
@@ -1001,20 +998,12 @@ export class QueryBuilder<Entity> {
                     idsQuery += ` ORDER BY "ids_${metadata.firstPrimaryColumn.fullName}"`; // this is required for mssql driver if firstResult is used. Other drivers don't care about it
                 }
 
-                if (this.connection.driver instanceof SqlServerDriver) { // todo: temporary. need to refactor and make a proper abstraction
 
-                    if (this.skipNumber || this.takeNumber) {
-                        idsQuery += ` OFFSET ${this.skipNumber || 0} ROWS`;
-                        if (this.takeNumber)
-                            idsQuery += " FETCH NEXT " + this.takeNumber + " ROWS ONLY";
-                    }
-                } else {
+                if (this.takeNumber)
+                    idsQuery += " LIMIT " + this.takeNumber;
+                if (this.skipNumber)
+                    idsQuery += " OFFSET " + this.skipNumber;
 
-                    if (this.takeNumber)
-                        idsQuery += " LIMIT " + this.takeNumber;
-                    if (this.skipNumber)
-                        idsQuery += " OFFSET " + this.skipNumber;
-                }
 
                 return await queryRunner.query(idsQuery, parameters)
                     .then((results: any[]) => {
@@ -1573,16 +1562,6 @@ export class QueryBuilder<Entity> {
             allSelects.push("*");
 
         let lock: string = "";
-        if (this.connection.driver instanceof SqlServerDriver) {
-            switch (this.lockMode) {
-                case "pessimistic_read":
-                    lock = " WITH (HOLDLOCK, ROWLOCK)";
-                    break;
-                case "pessimistic_write":
-                    lock = " WITH (UPDLOCK, ROWLOCK)";
-                    break;
-            }
-        }
 
         // create a selection query
         switch (this.type) {
@@ -1878,28 +1857,12 @@ export class QueryBuilder<Entity> {
     protected createLockExpression(): string {
         switch (this.lockMode) {
             case "pessimistic_read":
-                if (this.connection.driver instanceof MysqlDriver) {
-                    return " LOCK IN SHARE MODE";
+                throw new LockNotSupportedOnGivenDriverError();
 
-                } else if (this.connection.driver instanceof PostgresDriver) {
-                    return " FOR SHARE";
-
-                } else if (this.connection.driver instanceof SqlServerDriver) {
-                    return "";
-
-                } else {
-                    throw new LockNotSupportedOnGivenDriverError();
-                }
             case "pessimistic_write":
-                if (this.connection.driver instanceof MysqlDriver || this.connection.driver instanceof PostgresDriver) {
-                    return " FOR UPDATE";
 
-                } else if (this.connection.driver instanceof SqlServerDriver) {
-                    return "";
+                throw new LockNotSupportedOnGivenDriverError();
 
-                } else {
-                    throw new LockNotSupportedOnGivenDriverError();
-                }
             default:
                 return "";
         }

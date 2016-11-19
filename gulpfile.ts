@@ -19,6 +19,13 @@ const sourcemaps = require("gulp-sourcemaps");
 const istanbul = require("gulp-istanbul");
 const remapIstanbul = require("remap-istanbul/lib/gulpRemapIstanbul");
 const ts = require("gulp-typescript");
+const mochaPhantomJS = require('gulp-mocha-phantomjs');
+const typescript = require('gulp-tsc');
+const concat = require('gulp-concat');
+var browserify = require('gulp-browserify');
+
+
+
 const args = require('yargs').argv;
 
 @Gulpclass()
@@ -305,19 +312,53 @@ export class Gulpfile {
     }
 
     /**
+     * Concat tests
+     */
+    @Task()
+    concatTests() {
+
+        return gulp.src(["./build/compiled/test/**/*.js"])
+            .pipe(concat('all_tests.js'))
+            .pipe(gulp.dest('./build/compiled/test'));
+    }
+
+
+    /**
      * Runs tests the quick way.
      */
     @Task()
-    quickTests() {
+    browserifyTests() {
+        return gulp.src('./build/compiled/test/all_tests.js')
+            .pipe(browserify({
+                insertGlobals: true,
+                debug: !gulp.env.production
+            }))
+            .pipe(gulp.dest('./build/compiled/test/bla/'))
+    }
+    /**
+     * Runs tests the quick way.
+     */
+    @Task()
+    runTests() {
         chai.should();
         chai.use(require("sinon-chai"));
         chai.use(require("chai-as-promised"));
 
-        return gulp.src(["./build/compiled/test/**/*.js"])
-            .pipe(mocha({
-                bail: true,
-                timeout: 15000
+        return gulp.src('test/runner.html')
+            .pipe(mochaPhantomJS({
+                mocha: {
+                    bail: true,
+                    timeout: 15000
+                }
             }));
+    }
+
+    /**
+     * Runs tests the quick way.
+     */
+    @SequenceTask()
+    quickTests() {
+        return ["concatTests", "runTests"];
     }
 
     @Task()
