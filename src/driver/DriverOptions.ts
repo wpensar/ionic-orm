@@ -6,7 +6,7 @@ export interface DriverOptions {
     /**
      * Database type. This value is required.
      */
-    readonly type: "mysql"|"mysql2"|"postgres"|"mariadb"|"websql"|"oracle"|"mssql";
+    readonly type: "websql"|"ionic-sqlite";
 
     /**
      * Connection url to where perform connection to.

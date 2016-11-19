@@ -8,54 +8,53 @@ import {defaultContainer, getFromContainer} from "./src/container";
 import {ObjectType} from "./src/common/ObjectType";
 import {MetadataArgsStorage} from "./src/metadata-args/MetadataArgsStorage";
 
-export * from "./src/container";
+export {defaultContainer, getFromContainer, useContainer, UseContainerOptions} from "./src/container";
 export {Connection} from "./src/connection/Connection";
 export {ConnectionManager} from "./src/connection/ConnectionManager";
 export {ConnectionOptions} from "./src/connection/ConnectionOptions";
 
-export { Column } from "./src/decorator/columns/Column";
-export * from "./src/decorator/columns/CreateDateColumn";
-export * from "./src/decorator/columns/DiscriminatorColumn";
-export { PrimaryGeneratedColumn } from "./src/decorator/columns/PrimaryGeneratedColumn";
-export * from "./src/decorator/columns/PrimaryColumn";
-export * from "./src/decorator/columns/UpdateDateColumn";
-export * from "./src/decorator/columns/VersionColumn";
-export * from "./src/decorator/listeners/AfterInsert";
-export * from "./src/decorator/listeners/AfterLoad";
-export * from "./src/decorator/listeners/AfterRemove";
-export * from "./src/decorator/listeners/AfterUpdate";
-export * from "./src/decorator/listeners/BeforeInsert";
-export * from "./src/decorator/listeners/BeforeRemove";
-export * from "./src/decorator/listeners/BeforeUpdate";
-export * from "./src/decorator/listeners/EventSubscriber";
-export * from "./src/decorator/options/ColumnOptions";
-export * from "./src/decorator/options/IndexOptions";
-export * from "./src/decorator/options/JoinColumnOptions";
-export * from "./src/decorator/options/JoinTableOptions";
-export * from "./src/decorator/options/RelationOptions";
-export * from "./src/decorator/options/TableOptions";
-export * from "./src/decorator/relations/JoinColumn";
-export * from "./src/decorator/relations/JoinTable";
-export * from "./src/decorator/relations/ManyToMany";
-export * from "./src/decorator/relations/ManyToOne";
-export * from "./src/decorator/relations/OneToMany";
-export * from "./src/decorator/relations/OneToOne";
-export * from "./src/decorator/relations/RelationCount";
-export * from "./src/decorator/relations/RelationId";
-export * from "./src/decorator/tables/Table";
-export * from "./src/decorator/tables/AbstractTable";
-export * from "./src/decorator/tables/ClassTableChild";
-export * from "./src/decorator/tables/ClosureTable";
-export * from "./src/decorator/tables/EmbeddableTable";
-export * from "./src/decorator/tables/SingleTableChild";
-export { Table } from "./src/decorator/tables/Table";
-export * from "./src/decorator/tree/TreeLevelColumn";
-export * from "./src/decorator/tree/TreeParent";
-export * from "./src/decorator/Index";
-export * from "./src/decorator/NamingStrategy";
-export * from "./src/decorator/tables/TableInheritance";
-export * from "./src/decorator/Embedded";
-export * from "./src/decorator/DiscriminatorValue";
+export {Column} from "./src/decorator/columns/Column";
+export {CreateDateColumn} from "./src/decorator/columns/CreateDateColumn";
+export {DiscriminatorColumn} from "./src/decorator/columns/DiscriminatorColumn";
+export {PrimaryGeneratedColumn} from "./src/decorator/columns/PrimaryGeneratedColumn";
+export {PrimaryColumn} from "./src/decorator/columns/PrimaryColumn";
+export {UpdateDateColumn} from "./src/decorator/columns/UpdateDateColumn";
+export {VersionColumn} from "./src/decorator/columns/VersionColumn";
+export {AfterInsert} from "./src/decorator/listeners/AfterInsert";
+export {AfterLoad} from "./src/decorator/listeners/AfterLoad";
+export {AfterRemove} from "./src/decorator/listeners/AfterRemove";
+export {AfterUpdate} from "./src/decorator/listeners/AfterUpdate";
+export {BeforeInsert} from "./src/decorator/listeners/BeforeInsert";
+export {BeforeRemove} from "./src/decorator/listeners/BeforeRemove";
+export {BeforeUpdate} from "./src/decorator/listeners/BeforeUpdate";
+export {EventSubscriber} from "./src/decorator/listeners/EventSubscriber";
+export {ColumnOptions} from "./src/decorator/options/ColumnOptions";
+export {IndexOptions} from "./src/decorator/options/IndexOptions";
+export {JoinColumnOptions} from "./src/decorator/options/JoinColumnOptions";
+export {JoinTableOptions} from "./src/decorator/options/JoinTableOptions";
+export {RelationOptions} from "./src/decorator/options/RelationOptions";
+export {TableOptions} from "./src/decorator/options/TableOptions";
+export {JoinColumn} from "./src/decorator/relations/JoinColumn";
+export {JoinTable} from "./src/decorator/relations/JoinTable";
+export {ManyToMany} from "./src/decorator/relations/ManyToMany";
+export {ManyToOne} from "./src/decorator/relations/ManyToOne";
+export {OneToMany} from "./src/decorator/relations/OneToMany";
+export {OneToOne} from "./src/decorator/relations/OneToOne";
+export {RelationCount} from "./src/decorator/relations/RelationCount";
+export {RelationId} from "./src/decorator/relations/RelationId";
+export {Table} from "./src/decorator/tables/Table";
+export {AbstractTable} from "./src/decorator/tables/AbstractTable";
+export {ClassTableChild} from "./src/decorator/tables/ClassTableChild";
+export {ClosureTable} from "./src/decorator/tables/ClosureTable";
+export {EmbeddableTable} from "./src/decorator/tables/EmbeddableTable";
+export {SingleTableChild} from "./src/decorator/tables/SingleTableChild";
+export {TreeLevelColumn} from "./src/decorator/tree/TreeLevelColumn";
+export {TreeParent} from "./src/decorator/tree/TreeParent";
+export {Index} from "./src/decorator/Index";
+export {NamingStrategy} from "./src/decorator/NamingStrategy";
+export {TableInheritance} from "./src/decorator/tables/TableInheritance";
+export {Embedded} from "./src/decorator/Embedded";
+export {DiscriminatorValue} from "./src/decorator/DiscriminatorValue";
 
 // -------------------------------------------------------------------------
 // Commonly used functionality
@@ -119,7 +118,7 @@ export function getConnectionManager(): ConnectionManager {
 /**
  * Creates connection from the given connection options and registers it in the manager.
  */
-export function createConnection(options: ConnectionOptions): Promise<Connection>{
+export function createConnection(options: ConnectionOptions): Promise<Connection> {
     return getConnectionManager().createAndConnect(options);
 };
 
@@ -133,8 +132,8 @@ export function createConnection(options: ConnectionOptions): Promise<Connection
  * Creates connection and and registers it in the manager.
  */
 /*export function createConnection(optionsOrConnectionNameFromConfig?: ConnectionOptions|string, ormConfigPath?: string): Promise<Connection> {
-    return getConnectionManager().createAndConnect(optionsOrConnectionNameFromConfig as any, ormConfigPath);
-}*/
+ return getConnectionManager().createAndConnect(optionsOrConnectionNameFromConfig as any, ormConfigPath);
+ }*/
 
 /**
  * Creates new connections and registers them in the manager.
@@ -201,10 +200,10 @@ export function getConnection(connectionName: string = "default"): Connection {
  */
 /*
 
-export function getEntityManager(connectionName: string = "default"): EntityManager {
-    return getConnectionManager().get(connectionName).entityManager;
-}
-*/
+ export function getEntityManager(connectionName: string = "default"): EntityManager {
+ return getConnectionManager().get(connectionName).entityManager;
+ }
+ */
 
 /**
  * Gets repository for the given entity class.
@@ -220,6 +219,6 @@ export function getEntityManager(connectionName: string = "default"): EntityMana
  * Gets repository for the given entity class or name.
  */
 /*
-export function getRepository<Entity>(entityClassOrName: ObjectType<Entity>|string, connectionName: string = "default"): Repository<Entity> {
-    return getConnectionManager().get(connectionName).getRepository<Entity>(entityClassOrName as any);
-}*/
+ export function getRepository<Entity>(entityClassOrName: ObjectType<Entity>|string, connectionName: string = "default"): Repository<Entity> {
+ return getConnectionManager().get(connectionName).getRepository<Entity>(entityClassOrName as any);
+ }*/

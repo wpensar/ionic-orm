@@ -4,7 +4,7 @@ import {Logger} from "../../logger/Logger";
 import {DatabaseConnection} from "../DatabaseConnection";
 import {TransactionAlreadyStartedError} from "../error/TransactionAlreadyStartedError";
 import {TransactionNotStartedError} from "../error/TransactionNotStartedError";
-import {WebSqlDriver} from "./WebSqlDriver";
+import {IonicSQLiteDriver} from "./IonicSQLiteDriver";
 import {DataTypeNotSupportedByDriverError} from "../error/DataTypeNotSupportedByDriverError";
 import {ColumnSchema} from "../../schema-builder/schema/ColumnSchema";
 import {ColumnMetadata} from "../../metadata/ColumnMetadata";
@@ -21,7 +21,7 @@ import {NamingStrategyInterface} from "../../naming-strategy/NamingStrategyInter
  * Does not support compose primary keys with autoincrement field.
  * todo: need to throw exception for this case.
  */
-export class WebSqlQueryRunner implements QueryRunner {
+export class IonicSQLiteQueryRunner implements QueryRunner {
 
     // -------------------------------------------------------------------------
     // Protected Properties
@@ -38,7 +38,7 @@ export class WebSqlQueryRunner implements QueryRunner {
     // -------------------------------------------------------------------------
 
     constructor(protected databaseConnection: DatabaseConnection,
-                protected driver: WebSqlDriver,
+                protected driver: IonicSQLiteDriver,
                 protected logger: Logger) {
     }
 

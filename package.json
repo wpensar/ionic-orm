@@ -1,5 +1,8 @@
 {
+  "name": "ionic-orm",
+  "description": "Data-mapper ORM for Ionic WebSQL and SQLite",
   "private": false,
+  "version": "0.0.5",
   "license": "MIT",
   "author": "Brady Liles <bradyliles@outlook.com>",
   "repository": {
@@ -27,7 +30,7 @@
     "grunt": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "lodash": "^4.16.4",
-    "moment": "^2.15.1"
+    "moment": "2.15.2"
   },
   "homepage": "https://github.com/BradyLiles/ionic-orm#readme",
   "main": "dist/index.js",
