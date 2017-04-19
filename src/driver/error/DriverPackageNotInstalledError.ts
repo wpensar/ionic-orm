@@ -6,7 +6,8 @@ export class DriverPackageNotInstalledError extends Error {
 
     constructor(driverName: string, packageName: string) {
         super();
-        this.message = `${driverName} package has not been found installed. Try to install it: npm install ${packageName} --save`;
+        this.message = `${driverName} has not been found installed. Try to install it: ${packageName} --save`;
+
     }
 
 }
