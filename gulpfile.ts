@@ -19,14 +19,14 @@ const sourcemaps = require("gulp-sourcemaps");
 const istanbul = require("gulp-istanbul");
 const remapIstanbul = require("remap-istanbul/lib/gulpRemapIstanbul");
 const ts = require("gulp-typescript");
-const mochaPhantomJS = require('gulp-mocha-phantomjs');
-const typescript = require('gulp-tsc');
-const concat = require('gulp-concat');
-var browserify = require('gulp-browserify');
+const mochaPhantomJS = require("gulp-mocha-phantomjs");
+const typescript = require("gulp-tsc");
+const concat = require("gulp-concat");
+const browserify = require("gulp-browserify");
 
 
 
-const args = require('yargs').argv;
+const args = require("yargs").argv;
 
 @Gulpclass()
 export class Gulpfile {
@@ -318,8 +318,8 @@ export class Gulpfile {
     concatTests() {
 
         return gulp.src(["./build/compiled/test/**/*.js"])
-            .pipe(concat('all_tests.js'))
-            .pipe(gulp.dest('./build/compiled/test'));
+            .pipe(concat("all_tests.js"))
+            .pipe(gulp.dest("./build/compiled/test"));
     }
 
 
@@ -328,12 +328,12 @@ export class Gulpfile {
      */
     @Task()
     browserifyTests() {
-        return gulp.src('./build/compiled/test/all_tests.js')
+        return gulp.src("./build/compiled/test/all_tests.js")
             .pipe(browserify({
                 insertGlobals: true,
                 debug: !gulp.env.production
             }))
-            .pipe(gulp.dest('./build/compiled/test/bla/'))
+            .pipe(gulp.dest("./build/compiled/test/bla/"));
     }
     /**
      * Runs tests the quick way.
@@ -344,7 +344,7 @@ export class Gulpfile {
         chai.use(require("sinon-chai"));
         chai.use(require("chai-as-promised"));
 
-        return gulp.src('test/runner.html')
+        return gulp.src("test/runner.html")
             .pipe(mochaPhantomJS({
                 mocha: {
                     bail: true,
