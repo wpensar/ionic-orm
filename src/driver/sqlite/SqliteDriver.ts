@@ -77,10 +77,16 @@ export class SqliteDriver implements Driver {
 
     /**
      * Performs connection to the database.
+     * Location 1: The new "default" iosDatabaseLocation value is NOT the same as the old default location
+     * and would break an upgrade for an app using the old default value (0) on iOS
+     * with the location option set to one the following choices (affects iOS only):
+     * 0 (default): Documents - visible to iTunes and backed up by iCloud
+     * 1: Library - backed up by iCloud, NOT visible to iTunes
+     * 2: Library/LocalDatabase - NOT visible to iTunes and NOT backed up by iCloud (same as using "default")
      */
     connect(): Promise<void> {
         return new Promise<void>((ok, fail) => {
-            const connection = (<any>window).openDatabase(this.options.database, "1.0", this.options.database, 5 * 1024 * 1024);
+            const connection = (<any>window).sqlitePlugin.openDatabase({name: this.options.database, location: 1} );
             if (!connection)
                 return fail();
 
@@ -92,8 +98,11 @@ export class SqliteDriver implements Driver {
 
             // we need to enable foreign keys in sqlite to make sure all foreign key related features
             // working properly. this also makes onDelete to work with sqlite.
-            connection.run(`PRAGMA foreign_keys = ON;`, (err: any, result: any) => {
-                ok();
+            connection.executeSql(`PRAGMA foreign_keys = ON;`, (result: any) => {
+                console.info(result);
+                ok(result);
+            }, (error: any) => {
+                fail(error);
             });
         });
     }
@@ -277,8 +286,8 @@ export class SqliteDriver implements Driver {
      */
     protected loadDependencies(): void {
 
-        if (!(<any>window).openDatabase) {
-            throw new DriverPackageNotInstalledError("IonicSQLite", "ionic-sqlite");
+        if (!(<any>window).sqlitePlugin.openDatabase) {
+            throw new DriverPackageNotInstalledError("Sqlite Plugin", "ionic plugin add cordova-sqlite-storage");
         }
     }
 
