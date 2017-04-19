@@ -1,6 +1,8 @@
 /**
  * Defines a special criteria to find specific entity.
  */
+import {JoinOptions} from "./JoinOptions"
+
 export interface FindOneOptions<Entity> {
 
     /**
