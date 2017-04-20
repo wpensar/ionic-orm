@@ -140,22 +140,21 @@ export class SqliteQueryRunner implements QueryRunner {
         this.logger.logQuery(query, parameters);
         return new Promise<any[]>((ok, fail) => {
             const __this = this;
-            this.databaseConnection.connection.transaction(function (transaction: any) {
-                transaction.executeSql(query, parameters,
-                    function (transaction: any, result: any) {
-                        if (result.rows) {
-                            let sqlResultSetRowListArray = Object.keys(result.rows).map(key => result.rows[key]);
-                            ok(sqlResultSetRowListArray);
+            this.databaseConnection.connection.executeSql(query, parameters,
+                function (result: any) {
+                    let sqlResultSetRowListArray = [];
+                    if (result.rows.length) {
+                        for (let i = 0; i < result.rows.length; i++){
+                            sqlResultSetRowListArray[i] = result.rows.item(i);
                         }
-                        else {
-                            ok(result);
-                        }
-                    },
-                    function (transaction: any, error: any) {
-                        __this.logger.logFailedQuery(query, parameters);
-                        __this.logger.logQueryError(error);
-                        fail(error);
-                    });
+                    }
+                    ok(sqlResultSetRowListArray);
+
+                },
+                function (error: any) {
+                    __this.logger.logFailedQuery(query, parameters);
+                    __this.logger.logQueryError(error);
+                    fail(error);
             });
         });
     }
