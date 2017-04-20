@@ -285,7 +285,7 @@ export class SqliteDriver implements Driver {
      * If driver dependency is not given explicitly, then try to load it via "require".
      */
     protected loadDependencies(): void {
-        if ((<any>window).sqlitePlugin) {
+        if (!(<any>window).sqlitePlugin) {
             throw new DriverPackageNotInstalledError("Sqlite Plugin", "ionic plugin add cordova-sqlite-storage");
         }
     }
