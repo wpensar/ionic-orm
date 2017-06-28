@@ -195,8 +195,7 @@ export class Connection {
 
             // if for some reason build metadata fail (for example validation error during entity metadata check)
             // connection needs to be closed
-            await this.close();
-            throw error;
+            this.close().then(() => { throw error; });
         }
 
         return this;
