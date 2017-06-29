@@ -1,19 +1,19 @@
-import {QueryRunner} from "../../query-runner/QueryRunner";
-import {ObjectLiteral} from "../../common/ObjectLiteral";
-import {Logger} from "../../logger/Logger";
-import {DatabaseConnection} from "../DatabaseConnection";
-import {TransactionAlreadyStartedError} from "../error/TransactionAlreadyStartedError";
-import {TransactionNotStartedError} from "../error/TransactionNotStartedError";
-import {SqliteDriver} from "./SqliteDriver";
-import {DataTypeNotSupportedByDriverError} from "../error/DataTypeNotSupportedByDriverError";
-import {ColumnSchema} from "../../schema-builder/schema/ColumnSchema";
-import {ColumnMetadata} from "../../metadata/ColumnMetadata";
-import {TableSchema} from "../../schema-builder/schema/TableSchema";
-import {IndexSchema} from "../../schema-builder/schema/IndexSchema";
-import {ForeignKeySchema} from "../../schema-builder/schema/ForeignKeySchema";
-import {PrimaryKeySchema} from "../../schema-builder/schema/PrimaryKeySchema";
-import {QueryRunnerAlreadyReleasedError} from "../../query-runner/error/QueryRunnerAlreadyReleasedError";
-import {ColumnType} from "../../metadata/types/ColumnTypes";
+import { QueryRunner } from "../../query-runner/QueryRunner";
+import { ObjectLiteral } from "../../common/ObjectLiteral";
+import { Logger } from "../../logger/Logger";
+import { DatabaseConnection } from "../DatabaseConnection";
+import { TransactionAlreadyStartedError } from "../error/TransactionAlreadyStartedError";
+import { TransactionNotStartedError } from "../error/TransactionNotStartedError";
+import { SqliteDriver } from "./SqliteDriver";
+import { DataTypeNotSupportedByDriverError } from "../error/DataTypeNotSupportedByDriverError";
+import { ColumnSchema } from "../../schema-builder/schema/ColumnSchema";
+import { ColumnMetadata } from "../../metadata/ColumnMetadata";
+import { TableSchema } from "../../schema-builder/schema/TableSchema";
+import { IndexSchema } from "../../schema-builder/schema/IndexSchema";
+import { ForeignKeySchema } from "../../schema-builder/schema/ForeignKeySchema";
+import { PrimaryKeySchema } from "../../schema-builder/schema/PrimaryKeySchema";
+import { QueryRunnerAlreadyReleasedError } from "../../query-runner/error/QueryRunnerAlreadyReleasedError";
+import { ColumnType } from "../../metadata/types/ColumnTypes";
 
 /**
  * Runs queries on a single sqlite database connection.
@@ -38,8 +38,8 @@ export class SqliteQueryRunner implements QueryRunner {
     // -------------------------------------------------------------------------
 
     constructor(protected databaseConnection: DatabaseConnection,
-                protected driver: SqliteDriver,
-                protected logger: Logger) {
+        protected driver: SqliteDriver,
+        protected logger: Logger) {
     }
 
     // -------------------------------------------------------------------------
@@ -144,7 +144,7 @@ export class SqliteQueryRunner implements QueryRunner {
                 function (result: any) {
                     let sqlResultSetRowListArray = [];
                     if (result.rows.length) {
-                        for (let i = 0; i < result.rows.length; i++){
+                        for (let i = 0; i < result.rows.length; i++) {
                             sqlResultSetRowListArray[i] = result.rows.item(i);
                         }
                     }
@@ -155,7 +155,7 @@ export class SqliteQueryRunner implements QueryRunner {
                     __this.logger.logFailedQuery(query, parameters);
                     __this.logger.logQueryError(error);
                     fail(error);
-            });
+                });
         });
     }
 
@@ -176,21 +176,19 @@ export class SqliteQueryRunner implements QueryRunner {
         return new Promise<any[]>((ok, fail) => {
             const __this = this;
 
-            this.databaseConnection.connection.transaction(function (transaction: any) {
-                transaction.executeSql(sql, parameters,
-                    function (transaction: any, result: any) {
-                        if (generatedColumn)
-                            return ok(result["insertId"]);
-                        // return ok(this["lastID"]);
+            this.databaseConnection.connection.executeSql(sql, parameters,
+                function (result: any) {
+                    if (generatedColumn)
+                        return ok(result["insertId"]);
+                    // return ok(this["lastID"]);
 
-                        ok();
-                    },
-                    function (transaction: any, error: any) {
-                        __this.logger.logFailedQuery(sql, parameters);
-                        __this.logger.logQueryError(error);
-                        fail(error);
-                    });
-            });
+                    ok();
+                },
+                function (transaction: any, error: any) {
+                    __this.logger.logFailedQuery(sql, parameters);
+                    __this.logger.logQueryError(error);
+                    fail(error);
+                });
 
         });
     }
@@ -224,7 +222,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Deletes from the given table by a given conditions.
      */
-    async delete(tableName: string, conditions: ObjectLiteral|string, maybeParameters?: any[]): Promise<void> {
+    async delete(tableName: string, conditions: ObjectLiteral | string, maybeParameters?: any[]): Promise<void> {
         if (this.isReleased)
             throw new QueryRunnerAlreadyReleasedError();
 
@@ -260,7 +258,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Loads given table's data from the database.
      */
-    async loadTableSchema(tableName: string): Promise<TableSchema|undefined> {
+    async loadTableSchema(tableName: string): Promise<TableSchema | undefined> {
         const tableSchemas = await this.loadTableSchemas([tableName]);
         return tableSchemas.length > 0 ? tableSchemas[0] : undefined;
     }
@@ -298,7 +296,7 @@ export class SqliteQueryRunner implements QueryRunner {
             ]);
 
             // find column name with auto increment
-            let autoIncrementColumnName: string|undefined = undefined;
+            let autoIncrementColumnName: string | undefined = undefined;
             const tableSql: string = dbTable["sql"];
             if (tableSql.indexOf("AUTOINCREMENT") !== -1) {
                 autoIncrementColumnName = tableSql.substr(0, tableSql.indexOf("AUTOINCREMENT"));
@@ -434,7 +432,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Creates a new column from the column schema in the table.
      */
-    async addColumn(tableSchemaOrName: TableSchema|string, column: ColumnSchema): Promise<void> {
+    async addColumn(tableSchemaOrName: TableSchema | string, column: ColumnSchema): Promise<void> {
         if (this.isReleased)
             throw new QueryRunnerAlreadyReleasedError();
 
@@ -457,7 +455,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Creates a new columns from the column schema in the table.
      */
-    async addColumns(tableSchemaOrName: TableSchema|string, columns: ColumnSchema[]): Promise<void> {
+    async addColumns(tableSchemaOrName: TableSchema | string, columns: ColumnSchema[]): Promise<void> {
         if (this.isReleased)
             throw new QueryRunnerAlreadyReleasedError();
 
@@ -480,9 +478,9 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Renames column in the given table.
      */
-    async renameColumn(tableSchemaOrName: TableSchema|string, oldColumnSchemaOrName: ColumnSchema|string, newColumnSchemaOrName: ColumnSchema|string): Promise<void> {
+    async renameColumn(tableSchemaOrName: TableSchema | string, oldColumnSchemaOrName: ColumnSchema | string, newColumnSchemaOrName: ColumnSchema | string): Promise<void> {
 
-        let tableSchema: TableSchema|undefined = undefined;
+        let tableSchema: TableSchema | undefined = undefined;
         if (tableSchemaOrName instanceof TableSchema) {
             tableSchema = tableSchemaOrName;
         } else {
@@ -492,7 +490,7 @@ export class SqliteQueryRunner implements QueryRunner {
         if (!tableSchema)
             throw new Error(`Table ${tableSchemaOrName} was not found.`);
 
-        let oldColumn: ColumnSchema|undefined = undefined;
+        let oldColumn: ColumnSchema | undefined = undefined;
         if (oldColumnSchemaOrName instanceof ColumnSchema) {
             oldColumn = oldColumnSchemaOrName;
         } else {
@@ -502,7 +500,7 @@ export class SqliteQueryRunner implements QueryRunner {
         if (!oldColumn)
             throw new Error(`Column "${oldColumnSchemaOrName}" was not found in the "${tableSchemaOrName}" table.`);
 
-        let newColumn: ColumnSchema|undefined = undefined;
+        let newColumn: ColumnSchema | undefined = undefined;
         if (newColumnSchemaOrName instanceof ColumnSchema) {
             newColumn = newColumnSchemaOrName;
         } else {
@@ -526,11 +524,11 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Changes a column in the table.
      */
-    async changeColumn(tableSchemaOrName: TableSchema|string, oldColumnSchemaOrName: ColumnSchema|string, newColumn: ColumnSchema): Promise<void> {
+    async changeColumn(tableSchemaOrName: TableSchema | string, oldColumnSchemaOrName: ColumnSchema | string, newColumn: ColumnSchema): Promise<void> {
         if (this.isReleased)
             throw new QueryRunnerAlreadyReleasedError();
 
-        let tableSchema: TableSchema|undefined = undefined;
+        let tableSchema: TableSchema | undefined = undefined;
         if (tableSchemaOrName instanceof TableSchema) {
             tableSchema = tableSchemaOrName;
         } else {
@@ -540,7 +538,7 @@ export class SqliteQueryRunner implements QueryRunner {
         if (!tableSchema)
             throw new Error(`Table ${tableSchemaOrName} was not found.`);
 
-        let oldColumn: ColumnSchema|undefined = undefined;
+        let oldColumn: ColumnSchema | undefined = undefined;
         if (oldColumnSchemaOrName instanceof ColumnSchema) {
             oldColumn = oldColumnSchemaOrName;
         } else {
@@ -579,7 +577,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Drops column in the table.
      */
-    async dropColumn(tableSchemaOrName: TableSchema|string, columnSchemaOrName: ColumnSchema|string): Promise<void> {
+    async dropColumn(tableSchemaOrName: TableSchema | string, columnSchemaOrName: ColumnSchema | string): Promise<void> {
         return this.dropColumns(tableSchemaOrName as any, [columnSchemaOrName as any]);
     }
 
@@ -596,7 +594,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Drops the columns in the table.
      */
-    async dropColumns(tableSchemaOrName: TableSchema|string, columnSchemasOrNames: ColumnSchema[]|string[]): Promise<void> {
+    async dropColumns(tableSchemaOrName: TableSchema | string, columnSchemasOrNames: ColumnSchema[] | string[]): Promise<void> {
         if (this.isReleased)
             throw new QueryRunnerAlreadyReleasedError();
 
@@ -641,7 +639,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Creates a new foreign key.
      */
-    async createForeignKey(tableSchemaOrName: TableSchema|string, foreignKey: ForeignKeySchema): Promise<void> {
+    async createForeignKey(tableSchemaOrName: TableSchema | string, foreignKey: ForeignKeySchema): Promise<void> {
         if (this.isReleased)
             throw new QueryRunnerAlreadyReleasedError();
 
@@ -661,7 +659,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Creates a new foreign keys.
      */
-    async createForeignKeys(tableSchemaOrName: TableSchema|string, foreignKeys: ForeignKeySchema[]): Promise<void> {
+    async createForeignKeys(tableSchemaOrName: TableSchema | string, foreignKeys: ForeignKeySchema[]): Promise<void> {
         if (this.isReleased)
             throw new QueryRunnerAlreadyReleasedError();
 
@@ -684,7 +682,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Drops a foreign key from the table.
      */
-    async dropForeignKey(tableSchemaOrName: TableSchema|string, foreignKey: ForeignKeySchema): Promise<void> {
+    async dropForeignKey(tableSchemaOrName: TableSchema | string, foreignKey: ForeignKeySchema): Promise<void> {
         if (this.isReleased)
             throw new QueryRunnerAlreadyReleasedError();
 
@@ -704,7 +702,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * Drops a foreign keys from the table.
      */
-    async dropForeignKeys(tableSchemaOrName: TableSchema|string, foreignKeys: ForeignKeySchema[]): Promise<void> {
+    async dropForeignKeys(tableSchemaOrName: TableSchema | string, foreignKeys: ForeignKeySchema[]): Promise<void> {
         if (this.isReleased)
             throw new QueryRunnerAlreadyReleasedError();
 
@@ -915,7 +913,7 @@ export class SqliteQueryRunner implements QueryRunner {
     /**
      * If given value is a table name then it loads its table schema representation from the database.
      */
-    protected async getTableSchema(tableSchemaOrName: TableSchema|string): Promise<TableSchema> {
+    protected async getTableSchema(tableSchemaOrName: TableSchema | string): Promise<TableSchema> {
         if (tableSchemaOrName instanceof TableSchema) {
             return tableSchemaOrName;
         } else {
